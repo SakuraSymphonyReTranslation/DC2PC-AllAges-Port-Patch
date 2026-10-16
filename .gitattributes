@@ -1,0 +1,3 @@
+# Keep distributed files byte-identical on checkout, including mixed encodings.
+# Pertahankan byte berkas distribusi saat checkout, termasuk encoding campuran.
+* -text

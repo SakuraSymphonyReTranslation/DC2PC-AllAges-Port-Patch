@@ -1,0 +1,223 @@
+PANDUAN PEMULA — TOOLS TERJEMAHAN D.C.II P.C. ALL AGE
+Versi alur terpandu: 16 Oktober 2026
+
+BAHASA ANTARMUKA
+
+Aplikasi selalu dibuka dalam English. Gunakan pilihan Language / Bahasa
+di bagian atas untuk beralih ke Bahasa Indonesia atau kembali ke English.
+Mode manual memakai pilihan yang sama dan juga memiliki pemilih bahasa.
+Pergantian bahasa mempertahankan folder, proyek, tab, lebar baris, dan log.
+Pilihan bahasa berlaku selama sesi ini; pembukaan berikutnya kembali English.
+Ini mengubah antarmuka tool, bukan bahasa atau isi game. Tombol dialog milik
+Windows dan pesan sistem mengikuti bahasa Windows. BEGINNER_GUIDE.txt adalah
+panduan ringkas berbahasa Inggris. Pemilih dinonaktifkan selama proses berjalan.
+
+LOKASI PROYEK DAN MODUL TUTORIAL
+
+Folder proyek awalnya kosong. Pilih folder kerja kosong sendiri untuk proyek
+baru, atau klik Buka proyek untuk memilih proyek.json yang sudah ada. Aplikasi
+tidak menentukan lokasi proyek di Documents atau OneDrive secara otomatis.
+Buka tombol Tutorial English / Tutorial Indonesia untuk modul langkah demi
+langkah beserta contoh: TUTORIAL_ENGLISH.txt dan TUTORIAL_INDONESIA.txt.
+
+MULAI DARI MANA?
+
+Untuk MEMAINKAN patch: jalankan DC2PCLauncher.exe di folder game.
+Untuk MENGEDIT terjemahan: jalankan DC2PCMesTextTool_GUI.exe.
+Anda tidak perlu menjalankan sebelas skrip Python satu per satu.
+
+Pada komputer ini, aplikasi editor tersedia di:
+E:\Games\Da Capo 2 Plus Communication All Age\DC2PCAllAgeEditionMesTextTool_GUI and Patch\bin\Release\net8.0-windows\DC2PCMesTextTool_GUI.exe
+
+Dalam paket distribusi, buka:
+Tools_Terjemahan\DC2PCMesTextTool_GUI.exe
+
+Simpan EXE bersama DLL, deps.json, runtimeconfig.json, dan panduan di folder
+yang sama. Jika Windows meminta .NET, instal .NET 8 Desktop Runtime yang
+sesuai dengan Windows Anda. SDK hanya diperlukan untuk membangun source code.
+IDA Pro, Python, dan Visual Studio tidak diperlukan untuk mengedit JSON.
+
+ARTI FILE DAN FOLDER
+
+MES  = naskah biner yang dibaca game; berisi teks serta perintah/cabang cerita.
+JSON = salinan teks yang mudah diedit; tidak dapat langsung dibaca game.
+Ekspor = MES menjadi JSON. Impor/build = JSON menjadi MES memakai MES sumber.
+
+AdvData\MES    : naskah Jepang yang terpasang; BELUM terverifikasi All Age.
+id_Data\MES    : naskah Indonesia yang dipakai patch ketika tersedia.
+id_Data\JSON   : ekspor naskah Indonesia; bukan bahan Jepang asli.
+JSON_AllAge_Original_20261016 : ekspor AdvData\MES; namanya TIDAK menjamin All Age.
+AdvData\MES\json : EKSPOR LAMA pada instalasi ini; masih berisi adegan 18+.
+                    Jangan gunakan folder lama ini sebagai acuan All Age.
+
+Nama folder tidak membuktikan edisi. Pada audit instalasi ini, delapan naskah
+adegan yang dihapus sudah berupa jump stub di AdvData\MES dan id_Data\MES.
+JSON barunya berupa [] karena naskah itu hanya melompat ke adegan berikutnya.
+Biarkan [] tetap kosong. Jangan mengembalikan isi dari JSON 18+ ke sana.
+
+KOREKSI AUDIT 16 OKTOBER 2026: masih ditemukan konten 18+ pada naskah
+ind_0127_f3_kko.mes. Perubahan delapan naskah dan 25 adegan pengganti tidak
+membuktikan seluruh korpus bersih. Baca STATUS_SUMBER.txt untuk batas audit.
+Belum ada folder raw JP All Age resmi/bersih yang dapat dipastikan dari
+bahan yang diperiksa. Ekspor ulang hanya mengubah format, bukan edisinya.
+
+ALUR 1–5: MEMPERBAIKI TERJEMAHAN YANG SUDAH ADA
+
+1. BUAT PROYEK + EKSPOR
+   - Buka aplikasi. Halaman pertama adalah Alur Ekspor / Impor Terjemahan.
+   - Folder utama game: folder yang berisi DC2PC.EXE.
+   - Basis proyek: pilih "Indonesia saat ini — id_Data\MES".
+   - Periksa MES sumber menunjuk ke id_Data\MES.
+   - Folder proyek: pilih folder BARU/KOSONG, misalnya:
+     E:\Games\Da Capo 2 Plus Communication All Age\Proyek_Terjemahan\Revisi_01
+   - Klik "1. Buat proyek + ekspor". Tunggu sampai tertulis Proyek siap.
+   - Jika sudah memiliki proyek, klik "Buka proyek..." dan pilih proyek.json.
+     Jangan membuat proyek ulang di folder yang berisi pekerjaan Anda.
+
+   Untuk menerjemahkan dari Jepang terpasang, pilih Jepang — AdvData\MES.
+   Jika targetnya All Age, pastikan sumber sudah diaudit terlebih dahulu.
+   Teks yang belum diedit akan tetap Jepang. Jangan memilih basis Jepang
+   untuk sekadar memperbaiki satu pilihan dari terjemahan Indonesia sekarang.
+
+2. EDIT JSON
+   - Klik "2. Buka JSON untuk diedit".
+   - Buka salah satu file menggunakan editor teks, misalnya VS Code/Notepad.
+   - Anda boleh memakai aplikasi penerjemah JSON lain selama struktur tetap.
+   - Edit nilai message. Jika name ada, Anda boleh mengedit isi nama itu.
+   - Simpan dalam UTF-8 dan nama file yang sama.
+   - Jangan menambah/menghapus/mengurutkan ulang entri, mengganti nama file,
+     menambah/menghapus kolom name, atau mengganti [] dengan isi edisi lain.
+   - Pertahankan kode kontrol seperti @t90@d1 dan penanda khusus dari sumber.
+     Pemeriksaan otomatis tidak memastikan semua kode kontrol tetap benar.
+
+   Contoh pilihan:
+     [
+       { "message": "○ Percaya" },
+       { "message": "○ Masih meragukannya..." }
+     ]
+   Itu contoh bentuk JSON saja. Jangan menimpa naskah lengkap dengan contoh ini.
+   Tulis satu spasi setelah ○ dan antar kata. Pemisah baris dalam pilihan
+   akan digabung sebagai spasi; pilihan tidak memakai word-wrap dialog.
+   Tanda ~ tetap dipertahankan sebagai teks, bukan diubah menjadi spasi.
+
+   Contoh dialog:
+     { "name": "Yoshiyuki", "message": "「Aku percaya padamu」" }
+   Jika pesan memakai tanda kutip ASCII di dalam string, tulis \".
+   Koma dan kurung harus tetap benar. Jangan menggunakan Word untuk JSON.
+
+3. PERIKSA JSON
+   - Tutup/simpan perubahan editor, lalu klik "3. Periksa JSON".
+   - Aplikasi memeriksa nama/jumlah file, jumlah entri, kolom name/message,
+     posisi ○, karakter yang tidak didukung CP932, dan keutuhan salinan sumber.
+   - Jika gagal, baca file dan nomor entri pada pesan. Nomor entri dihitung
+     mulai 1, BUKAN nomor baris pada editor teks.
+   - Rincian tersimpan di 05_LAPORAN\validasi.json. Perbaiki lalu periksa lagi.
+   - Pemeriksaan struktur tidak membuktikan terjemahan benar. Dua entri dengan
+     bentuk sama masih bisa tertukar tanpa terdeteksi. Jangan mengubah urutan.
+
+4. BUAT MES
+   - Klik "4. Impor JSON → MES". Pemeriksaan JSON diulang secara otomatis.
+   - Setiap build disimpan di folder baru di 04_HASIL\build_...\id_Data\MES.
+   - File yang JSON-nya tidak diedit disalin persis dari MES sumber.
+   - Pada file yang diedit, teks lain yang sama tetap dipertahankan.
+   - Hasil diperiksa untuk jumlah/opcode token, data selain teks, serta tujuan
+     cabang cerita. Jika gagal, build itu tidak menjadi hasil siap pasang.
+   - Build tidak memasang apa pun ke game. Anda boleh meninjau hasil dahulu.
+   - Build dialog yang diedit menggunakan aturan bungkus lama (70). Tidak ada
+     perubahan pengaturan font, ukuran textbox, atau ukuran popup game.
+   - Teks pilihan menggunakan normalisasi satu baris; DLL patch mengatur
+     penampilannya dengan renderer khusus pilihan.
+
+5. PASANG DAN UJI
+   - Tutup game. Pastikan Folder utama game benar.
+   - Klik "5. Pasang hasil ke game".
+   - Aplikasi menolak hasil jika JSON berubah setelah build. Buat MES ulang.
+   - Hanya MES yang diedit yang dipasang ke id_Data\MES. Bila judul replay
+     diedit, peta judul replay terkait ikut disalin dan dibackup.
+   - Backup file sebelumnya disimpan di 06_BACKUP\pasang_...\id_Data.
+   - EXE game, launcher, DLL patch, INI, ukuran popup, dan ukuran textbox
+     tidak diganti oleh langkah pemasangan JSON ini.
+   - Jalankan DC2PCLauncher.exe. Buka adegan yang diubah, uji semua pilihannya,
+     kelanjutan cabang, save/load, dan replay bila judul replay diubah.
+   - Untuk revisi berikutnya, kembali ke langkah 2, 3, 4, lalu 5.
+
+Catatan pemasangan: satu MES berisi satu naskah, jadi seluruh file MES itu
+diganti. Jika basis proyek Anda Jepang, teks yang belum diterjemahkan di MES
+yang diedit ikut tetap Jepang. Gunakan basis Indonesia untuk koreksi kecil.
+
+STRUKTUR PROYEK
+
+proyek.json         : catatan sumber dan hash; jangan diedit manual.
+01_MES_SUMBER       : salinan MES sebelum pekerjaan; jangan diedit.
+02_JSON_ASLI        : acuan ekspor awal; jangan diedit.
+03_JSON_EDIT        : SATU-SATUNYA folder JSON yang perlu Anda edit.
+04_HASIL            : hasil build, hasil.json, serta log impor per build.
+05_LAPORAN          : ekspor.txt dan validasi.json.
+06_BACKUP           : file game sebelum pemasangan, catatan pemulihan.
+hasil_terakhir.json : hasil build terakhir; jangan diedit manual.
+
+File JSON harus langsung berada dalam 03_JSON_EDIT, bukan subfolder karakter.
+File sumber di dalam proyek tidak mengikuti perubahan game secara otomatis.
+Buat proyek baru bila mengganti basis/edisi; simpan proyek lama sebagai arsip.
+
+MEMULIHKAN PEMASANGAN
+
+Tutup game. Buka backup pemasangan yang ingin dibatalkan, baca PULIHKAN.txt.
+Salin isi folder id_Data dalam backup kembali ke id_Data pada folder game.
+Untuk file yang sebelumnya belum ada, lihat pemasangan.json (existed=false)
+dan hapus hanya file baru tersebut jika ingin kembali sepenuhnya.
+Jika operasi salin gagal, aplikasi mencoba memulihkan file yang sudah disentuh.
+Rincian kegagalan/pemulihan ada di gagal.json. Simpan backup sampai pengujian
+game selesai; jangan menghapusnya hanya karena pemeriksaan JSON lulus.
+
+BOLEHKAH MEMAKAI TERJEMAHAN JSON 18+?
+
+Boleh sebagai REFERENSI terjemahan untuk bagian yang cocok. Gunakan ekspor
+dari MES tujuan yang sudah diverifikasi edisinya sebagai
+kerangka tujuan, lalu cocokkan teks Jepang, pembicara, dan konteks adegannya.
+Nomor entri edisi 18+ tidak selalu sama. Menghapus H-scene saja tidak cukup;
+ada adegan pengganti, penghilangan baris, dan perubahan cabang. Aplikasi ini
+tidak menerjemahkan otomatis dan tidak otomatis memigrasikan seluruh 18+.
+Untuk korpus yang tidak cocok, alat akan menghentikan impor dan menyebut file.
+
+MODE MANUAL / CLI (UNTUK PENGGUNA LANJUTAN)
+
+Mode manual menyediakan ekspor/impor file atau folder tanpa proyek terpandu.
+Pada ekspor batch: MES Folder adalah sumber, JSON Folder adalah tujuan.
+Pada impor batch: JSON Folder adalah terjemahan, MES Folder adalah sumber,
+Output Folder adalah tujuan MES. Pilih output terpisah, bukan folder sumber.
+Operasi batch manual dapat meninggalkan sebagian hasil jika satu file gagal;
+gunakan proyek terpandu untuk pekerjaan sehari-hari dan pemasangan berbackup.
+
+Contoh CLI (ganti path contoh dengan folder Anda; apit path dengan kutip):
+  DC2PCMesTextTool_GUI.exe project-create "D:\Game\id_Data\MES" "D:\Proyek\Revisi_01"
+  DC2PCMesTextTool_GUI.exe project-check "D:\Proyek\Revisi_01"
+  DC2PCMesTextTool_GUI.exe project-build "D:\Proyek\Revisi_01"
+  DC2PCMesTextTool_GUI.exe project-deploy "D:\Proyek\Revisi_01" "D:\Game"
+Perintah legacy: export, import, batch-export, batch-import.
+Kode keluar 0 berarti operasi berhasil; selain 0 berarti perlu diperiksa.
+
+MENYIAPKAN PAKET DISTRIBUSI
+
+Folder DC2PC_AllAges_Indo_Patch adalah salinan distribusi terpisah. Mengedit
+game atau memasang hasil ke game TIDAK otomatis memperbarui folder tersebut.
+Setelah menguji revisi: salin MES yang direvisi ke id_Data\MES pada paket;
+salin peta replay bila berubah. Perbarui source_code dan Tools_Terjemahan jika
+kode/aplikasinya juga berubah. Pertahankan INI dan aset lain yang sudah benar.
+Jangan menyertakan save pribadi, log debug, backup, atau folder proyek kerja.
+Kompres folder distribusi sesudah memeriksa isinya. Tools tidak mengunggah file.
+Paket saat ini belum layak dinyatakan bebas konten 18+. Selesaikan audit
+naskah/aset dan pengujian cabang sebelum membagikannya sebagai All Age.
+
+MASALAH UMUM
+
+"Jumlah entri berbeda" : salah basis/edisi atau baris terhapus/ditambahkan.
+"Posisi penanda ○"      : pilihan hilang/bergeser; cocokkan dengan JSON acuan.
+"CP932"                : ganti emoji/karakter asing dengan teks biasa.
+"JSON acuan berubah"   : pulihkan 02_JSON_ASLI; jangan jadikan tempat edit.
+"MES sumber berubah"   : pulihkan snapshot; jangan menyalin MES baru ke sana.
+"Folder proyek tidak kosong" : gunakan Buka proyek atau pilih folder baru.
+"Parser/tujuan cabang"  : jangan pasang output; simpan sumber/JSON/log untuk audit.
+Game masih teks lama    : pastikan build sudah dipasang ke game yang benar,
+                         jalankan launcher patch, lalu muat adegan terkait.
+Pertanyaan skrip Python : baca PETA_PIPELINE.txt dan tombol Cek bahan pipeline.

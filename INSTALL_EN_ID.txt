@@ -1,0 +1,97 @@
+DC2PC ALLAGES PORT PATCH - INSTALLATION / PEMASANGAN
+Release v1.0.0 | 16 October / Oktober 2026
+https://github.com/SakuraSymphonyReTranslation/DC2PC-AllAges-Port-Patch
+
+ENGLISH
+
+The runtime archive contains DC2PCLauncher.exe, DC2PCPatch.dll,
+DC2PCPatch.ini, LoaderDll.dll, LocaleEmulator.dll, this guide, and notices.
+It does not include DC2PC.EXE or the AdvData/id_Data data folders.
+The tools archive contains the translation editor and its tutorials.
+
+For the bundled Indonesian port data:
+1. Close the game and back up the installation before replacing files.
+2. Download the repository ZIP (Code > Download ZIP, or Source code (zip)
+   on the release page). Extract it into a separate folder.
+3. Copy AdvData, id_Data, and the five runtime files listed above into your
+   installed game folder containing DC2PC.EXE. Keep other game libraries.
+4. Keep [Settings] Language=1 in DC2PCPatch.ini for Indonesian id_Data.
+5. Run DC2PCLauncher.exe from that game folder. A shortcut must use the
+   same folder as its working directory / Start in.
+6. Test dialogue, choices, branches, replay, and save/load.
+To restore: close the game and restore your installation backup.
+
+The optional PASANG_PATCH_OTOMATIS.bat requires the full package, including
+AdvData/id_Data. It reports copy failures but does not create a backup.
+
+ENGLISH VERSION TRIAL
+This patch can be tried with Da Capo 2 Plus Communication All Age in English.
+Compatibility has not been verified. Test a separate copy of that install.
+Use the runtime archive only first. Keep your existing English data; do not
+overwrite it with this repository's Indonesian id_Data or unverified AdvData.
+In DC2PCPatch.ini, [Settings] Language=0 uses original game paths, Language=1
+uses id_Data (the shipped default), and Language=2 uses compatible eng_data
+assets such as eng_data\MES. English assets are not bundled. Routing settings
+do not guarantee executable/patch compatibility. Some runtime menus/popups
+remain Indonesian. The tool's English interface does not change game text.
+The guided editor installs to id_Data, so it is not an English-game installer.
+
+TRANSLATION TOOL
+Install .NET 8 Desktop Runtime for Windows. Extract every file from
+Tools_Terjemahan_or_Translate.rar to one folder and run DC2PCMesTextTool_GUI.exe.
+It starts in English; Language / Bahasa switches to Bahasa Indonesia.
+Choose your own empty Project folder or open an existing proyek.json.
+Use Tutorial English / Tutorial Indonesia for the complete workflow.
+
+SOURCE STATUS
+This package is not verified as clean All Age content. Adult content was
+confirmed in ind_0127_f3_kko.mes. ind_0127_f1_nnk.mes has invalid source branch
+labels and edited imports are rejected. Export/import does not clean content.
+Read the repository README and STATUS_SUMBER.txt for scope and limitations.
+
+BAHASA INDONESIA
+
+Arsip runtime memuat DC2PCLauncher.exe, DC2PCPatch.dll, DC2PCPatch.ini,
+LoaderDll.dll, LocaleEmulator.dll, panduan ini, dan atribusi komponen.
+DC2PC.EXE serta folder data AdvData/id_Data tidak termasuk dalam RAR runtime.
+Arsip tools memuat editor terjemahan beserta tutorialnya.
+
+Untuk data port Indonesia bawaan:
+1. Tutup game dan cadangkan instalasi sebelum menimpa berkas.
+2. Unduh ZIP repository (Code > Download ZIP, atau Source code (zip) pada
+   halaman release). Ekstrak ke folder terpisah.
+3. Salin AdvData, id_Data, serta lima berkas runtime di atas ke folder
+   instalasi game yang memiliki DC2PC.EXE. Pertahankan library lain game.
+4. Gunakan [Settings] Language=1 di DC2PCPatch.ini untuk id_Data Indonesia.
+5. Jalankan DC2PCLauncher.exe dari folder game tersebut. Jika memakai shortcut,
+   working directory / Start in harus menunjuk ke folder game yang sama.
+6. Uji dialog, pilihan, cabang cerita, replay, dan save/load.
+Untuk memulihkan: tutup game lalu pulihkan backup instalasi Anda.
+
+PASANG_PATCH_OTOMATIS.bat membutuhkan paket lengkap termasuk AdvData/id_Data.
+Skrip melaporkan kegagalan salin, tetapi tidak membuat backup.
+
+UJI VERSI BAHASA INGGRIS
+Patch ini bisa dicoba pada Da Capo 2 Plus Communication All Age bahasa Inggris.
+Kompatibilitasnya belum terverifikasi. Uji pada salinan instalasi terpisah.
+Mulai dengan arsip runtime saja. Pertahankan data Inggris Anda; jangan timpa
+dengan id_Data Indonesia atau AdvData yang belum terverifikasi dari repository.
+Pada DC2PCPatch.ini, [Settings] Language=0 memakai jalur asli game, Language=1
+memakai id_Data (default bawaan), dan Language=2 memakai aset eng_data yang
+kompatibel seperti eng_data\MES. Aset Inggris tidak dibundel. Pengaturan jalur
+tidak menjamin kompatibilitas executable/patch. Sebagian menu/popup runtime
+masih Indonesia. Antarmuka English pada tools tidak mengubah teks game.
+Editor terpandu memasang ke id_Data, sehingga bukan installer game Inggris.
+
+TOOLS TERJEMAHAN
+Pasang .NET 8 Desktop Runtime untuk Windows. Ekstrak semua isi
+Tools_Terjemahan_or_Translate.rar ke satu folder dan buka DC2PCMesTextTool_GUI.exe.
+Tools dimulai dalam English; Language / Bahasa dapat diganti ke Indonesia.
+Pilih folder proyek kosong sendiri atau buka proyek.json yang sudah ada.
+Baca Tutorial English / Tutorial Indonesia untuk langkah lengkap.
+
+STATUS SUMBER
+Paket belum terverifikasi sebagai All Age bersih. Konten dewasa terkonfirmasi
+pada ind_0127_f3_kko.mes. ind_0127_f1_nnk.mes memiliki label cabang sumber
+rusak dan impor perubahannya ditolak. Ekspor/impor tidak membersihkan konten.
+Baca README repository serta STATUS_SUMBER.txt untuk batas verifikasinya.

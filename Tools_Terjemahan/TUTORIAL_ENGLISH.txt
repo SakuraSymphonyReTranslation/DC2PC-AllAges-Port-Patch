@@ -1,0 +1,150 @@
+TUTORIAL MODULE — ENGLISH
+DC2PC Translation Tool | 16 October 2026
+Goal: export game text, edit it, then import and install your changes.
+
+1. OPEN THE CORRECT APPLICATION
+
+To edit translations, open Tools_Terjemahan\DC2PCMesTextTool_GUI.exe.
+To play the game, use DC2PCLauncher.exe in the game folder.
+
+The editor starts in English. Language / Bahasa switches the interface to
+Bahasa Indonesia and back. Manual mode follows the same selection.
+The next launch starts in English again. This does not change game text.
+The .NET 8 Desktop Runtime is required. Python and IDA are not required.
+
+2. UNDERSTAND THE THREE FOLDERS
+
+Game folder
+  The installed game folder containing DC2PC.EXE and DC2PCLauncher.exe.
+  Select the installed game, not the downloaded patch package.
+
+Source MES
+  The folder containing the .mes scripts you want to export.
+  For the existing Indonesian translation: GAME_FOLDER\id_Data\MES.
+  For the installed Japanese scripts: GAME_FOLDER\AdvData\MES.
+  MES contains both text and story commands. Do not edit it in a text editor.
+
+Project folder
+  A separate working folder for source copies, editable JSON, output, and
+  backups. It is NOT the game folder, source MES folder, or source_code folder.
+  This field starts EMPTY. No Documents/OneDrive project path is assigned.
+  Choose a location you own and can write to. For example, if you use E:
+      E:\DC2PC_Translation_Projects\MyFirstProject
+  This is only an example; you choose the actual drive and folder.
+
+NEW PROJECT OR EXISTING PROJECT?
+  First time: choose a NEW, EMPTY project folder using Browse..., or type a
+  new folder path. Keep it separate from the Source MES folder; neither folder
+  should contain the other. Then use Create project + export.
+  Continuing work: click Open project... and select the project's proyek.json.
+  The tool fills in Project folder and Source MES. Do not export over old work.
+  The game installation does not automatically become a translation project.
+
+3. CREATE A PROJECT AND EXPORT
+
+1) Browse to Game folder, the folder containing DC2PC.EXE.
+2) In Project source, choose Current Indonesian to improve the translation
+   currently used by the patch. Source MES should end in id_Data\MES.
+   Installed Japanese selects AdvData\MES; its edition is unverified.
+   Other MES folder lets you choose a source yourself.
+3) Choose your empty Project folder.
+4) Click 1. Create project + export and wait for Project ready in the log.
+
+Your chosen project folder now contains:
+  proyek.json       Project record; select this when reopening the project.
+  01_MES_SUMBER     Reference MES copies. Do not edit.
+  02_JSON_ASLI      Original JSON reference. Do not edit.
+  03_JSON_EDIT      EDIT YOUR TRANSLATIONS HERE.
+  04_HASIL         Output from later imports/builds.
+  05_LAPORAN       Export and validation reports.
+  06_BACKUP        Backups created when installing output.
+
+Export alone does not change the installed game.
+
+4. EDIT THE JSON TEXT
+
+Click 2. Open editable JSON. Open a .json file in a text editor such as VS Code.
+Change only the text inside message and, when already present, name.
+
+Example before:
+[
+  { "message": "Aku percaya padamu." }
+]
+
+Example after:
+[
+  { "message": "Aku memercayaimu." }
+]
+
+Do not paste this whole example over a real file. Edit its existing entries.
+Keep the file name, entry count/order, field names, brackets, and commas.
+Do not add a name field if that entry did not have one. Keep choice marker ○
+at the beginning of choice text and preserve the order of choices.
+If a file contains only [], leave it empty. Save the JSON before continuing.
+For quotes inside message text use \"; a line break inside text uses \n.
+Use plain characters supported by CP932; avoid emoji and curly quotes.
+
+5. VALIDATE, THEN IMPORT
+
+Click 3. Validate JSON. Continue only after Validation passed.
+If there are problems, read the log and 05_LAPORAN\validasi.json, fix the
+reported JSON, save it, and validate again.
+
+Click 4. Import JSON → MES. Wait for MES ready. View output opens 04_HASIL.
+Each build has its own folder, with game files under id_Data\MES.
+The game is still unchanged. If you edit JSON again, run validation/import
+again before installing. The latest successful build is the one installed.
+
+6. INSTALL AND TEST IN THE GAME
+
+1) Save your game progress and close DC2PC.
+2) Confirm Game folder points to the installation you intend to update.
+3) Click 5. Install output to game.
+4) Wait for Installed. The tool copies edited MES and related replay maps
+   into id_Data, after creating a backup in your project's 06_BACKUP.
+5) Open DC2PCLauncher.exe and test the changed dialogue, choices, story
+   branches, save/load, and replay. Structural checks do not judge meaning.
+
+To undo an installation: close the game, open that installation's backup,
+and follow PULIHKAN.txt. Copy backed-up id_Data files over the game copies.
+In pemasangan.json, existed=false means a newly installed file; remove that
+file for a complete restoration. Keep backups until testing is finished.
+
+7. CONTINUE LATER
+
+Reopen the editor > Open project... > choose the same proyek.json.
+Continue editing 03_JSON_EDIT, then validate, import, and install again.
+Select Game folder again if it was not detected or you use another installation.
+Changing the interface language preserves folder inputs and the open project.
+Existing log messages keep the language in which they were generated.
+
+8. COMMON QUESTIONS
+
+Project folder is empty: this is intentional. Select your own work location,
+or open an existing proyek.json. The editor does not guess where you work.
+
+Folder is not empty: choose another empty folder for a NEW project. For an
+existing project, use Open project instead of Create project + export.
+
+Entry count/choice/name error: restore the affected structure from the matching
+02_JSON_ASLI reference, then reapply text edits without moving entries.
+
+Nothing to install: no text changed compared with the source, or you have not
+made a new build after editing. Read the validation/build status.
+
+Want to export just one file? Manual mode > Single File can export MES to JSON.
+Import also asks for its matching source MES. Save to a separate output file.
+Batch export uses MES Folder → JSON Folder; batch import uses JSON Folder +
+MES Folder → Output Folder. The guided project workflow is easier for beginners.
+
+SOURCE LIMITS
+
+Export/import preserves content; it does not make an edition All Age.
+This installation's audit found remaining adult content in ind_0127_f3_kko.mes
+and corrupt source branch labels in ind_0127_f1_nnk.mes. Edited imports of the
+corrupt script are rejected. No verified clean Japanese All Age source was
+established. Folder names do not prove an edition. Read STATUS_SUMBER.txt
+(Indonesian). Compare other-edition JSON by text/context, never by row alone.
+
+For developer Python scripts, see PETA_PIPELINE.txt (Indonesian). Those scripts
+are not required steps for this GUI tutorial.

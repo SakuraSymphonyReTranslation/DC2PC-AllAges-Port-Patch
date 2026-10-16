@@ -1,0 +1,171 @@
+PETA PIPELINE PYTHON DAN EXPORTER/IMPORTER
+Audit kode: 16 Oktober 2026
+
+RUTE NORMAL PENGGUNA
+
+MES sumber yang dipilih -> aplikasi GUI -> JSON edit -> pemeriksaan
+-> MES hasil -> pasang ke id_Data dengan backup -> uji game.
+Alur ini sudah tersedia sebagai halaman pertama aplikasi. Python tidak perlu.
+
+RUTE PEMBUATAN BASIS ALL AGE DARI BAHAN MENTAH
+
+Ini pekerjaan pengembang port, terpisah dari mengedit terjemahan. Skrip lama
+bergantung pada bahan yang tidak dibundel dalam source saat audit. Menjalankan
+semua skrip berdasarkan urutan nama tidak membentuk pipeline yang lengkap.
+Klaim "100%" di komentar skrip adalah catatan korpus lama, bukan jaminan untuk
+korpus Anda sekarang. Pertahankan bahan dan hasil kerja dalam salinan terpisah.
+
+ROOT pada sebagian besar skrip adalah INDUK folder Pipeline_Scripts.
+Dalam paket: ROOT = source_code. Pada repository utama: ROOT = folder proyek
+DC2PCAllAgeEditionMesTextTool_GUI and Patch. ROOT BUKAN otomatis folder game.
+
+BAHAN UNTUK REBUILD UTAMA
+
+ROOT\DC2PC\AdvData\MES                  : naskah PC sumber yang sesuai mapping.
+ROOT\PS2_extracted\DAT\MES.DAT           : arsip naskah PS2 yang sesuai.
+ROOT\opcode_map_final.json              : mapping opcode PS2 ke PC.
+ROOT\allages_wording_diffs.json          : pasangan perubahan kalimat.
+ROOT\cg_map.json                        : mapping dan daftar CG PC/PS2.
+ROOT\ALLAGES\AdvData\MES                : folder keluaran yang sudah ada,
+                                         termasuk cg_*.mes yang dipertahankan.
+Kebutuhan gambar tambahan dibahas pada skrip thumbnail.
+
+Pada audit ini bahan di atas tidak lengkap pada ROOT repository. Tombol Cek
+bahan pipeline menampilkan keberadaan lokal tanpa menjalankan skrip apa pun.
+Keberadaan file saja belum membuktikan isi/mapping sesuai versi sumber.
+
+DAFTAR 11 SKRIP
+
+1. rebuild_all_scripts.py — PEMBANGUN BASIS ALL AGE
+   Membaca PC MES, PS2 MES.DAT, mapping opcode/wording/CG. Mempertahankan
+   cg_*.mes dari keluaran yang telah tersedia; mentranscode 25 adegan pengganti,
+   membuat 8 jump stub, mengubah pemanggilnya, menerapkan wording naskah lain.
+   Menulis ROOT\ALLAGES\AdvData\MES; menjalankan pemeriksaan parsing/CG.
+   Memerlukan dc2_mes, dc2_pcmes, dc2_transcode, dc2_allages dalam folder skrip.
+   Tidak memiliki wizard atau parameter folder; path berada di konstanta kode.
+   Skrip membaca folder keluaran sebelum membuatnya: folder tersebut serta
+   bahan CG viewer harus disiapkan lebih dahulu. Jangan arahkan ke game aktif.
+   Contoh setelah SELURUH bahan siap: python Pipeline_Scripts\rebuild_all_scripts.py
+
+2. dc2_allages.py — WORDING/CG TAHAP LAMA DAN MODUL PEMBANTU
+   Perintah: status, wording, scenes, build; --pc menunjuk folder AdvData,
+   --out menunjuk akar hasil. Membaca allages_wording_diffs.json dan cg_map.json.
+   Strategi adegan di sini memakai penggantian CG/wording pada struktur PC;
+   ini berbeda dari penggantian 25 adegan PS2 + 8 stub pada rebuild_all_scripts.
+   Jangan menjalankan build lama setelah rebuild utama tanpa audit karena
+   hasil dapat tertimpa kembali oleh strategi yang berbeda.
+   Contoh inspeksi: python Pipeline_Scripts\dc2_allages.py status --pc "D:\Bahan\AdvData" --out "D:\Hasil"
+
+3. dc2_transcode.py — MENGUBAH BYTECODE PS2 MENJADI PC
+   Masukan satu MES PS2, keluaran satu MES PC, memerlukan mapping opcode.
+   Default mapping opcode_map2.json ada di folder skrip dan tidak dibundel.
+   Rebuild utama memakai opcode_map_final.json secara eksplisit.
+   Contoh: python Pipeline_Scripts\dc2_transcode.py "in.mes" "out.mes" --map "opcode_map_final.json"
+   Mode bawaan strict. --no-strict dapat melewatkan masalah mapping; bukan
+   cara memperbaiki port yang gagal. Tetap butuh pengecekan aset dan runtime.
+
+4. dc2_pcmes.py — PARSER/IMPORTER MES PC TINGKAT RENDAH
+   Memproses versi 0x9969; dipakai sebagai modul oleh beberapa skrip lain.
+   dump: membaca FOLDER MES dan menulis SATU JSON gabungan (scripts/lines,
+   offset nama/pesan). import membangun folder MES memakai offset dari JSON.
+   verify menguji parsing dan pembangunan ulang tanpa edit, bukan kualitas
+   terjemahan atau ketepatan isi All Age.
+   Contoh:
+     python Pipeline_Scripts\dc2_pcmes.py dump "D:\Bahan\MES" "pc_dump.json"
+     python Pipeline_Scripts\dc2_pcmes.py import "pc_dump.json" "D:\Bahan\MES" "D:\Hasil\MES"
+     python Pipeline_Scripts\dc2_pcmes.py verify "D:\Hasil\MES"
+   JSON gabungan ini TIDAK dapat ditukar dengan JSON per-naskah exporter GUI.
+   Modul ini memakai fallback karakter pada beberapa jalur; gunakan validasi
+   GUI untuk alur terjemahan biasa, bukan memaksakan data Unicode ke parser ini.
+
+5. dc2_mes.py — ARSIP DAN NASKAH PS2
+   Memproses MES.DAT PS2, versi MES 0x6E7D. Bukan importer JSON GUI untuk PC.
+   Perintah:
+     python Pipeline_Scripts\dc2_mes.py extract "MES.DAT" "MES_PS2"
+     python Pipeline_Scripts\dc2_mes.py dump "MES.DAT" "ps2_dump.json"
+     python Pipeline_Scripts\dc2_mes.py import "ps2_dump.json" "MES.DAT" "hasil.DAT"
+     python Pipeline_Scripts\dc2_mes.py pack "MES_PS2" "hasil.DAT"
+   Pertahankan struktur/offset skema JSON milik alat ini.
+
+6. apply_translations_to_ss_json.py — MIGRASI KORPUS PROYEK LAMA
+   Input ROOT\tools\ss_jp_json; output ROOT\tools\ss_id_json.
+   Masih memakai E:/projek atho/dc2ps untuk raw/translated serta modul
+   dc2_transfer yang tidak disertakan. Memakai korpus MES_rewrap dan
+   MES_backup_clean_jp, kamus global, pemetaan posisi, serta koreksi manual.
+   Ini bukan layanan penerjemah AI dan tidak otomatis cocok untuk semua edisi.
+   Harus memulihkan dependency, menyesuaikan path, memeriksa pasangan Jepang
+   dan Indonesia, lalu mengaudit hasil per adegan. Tidak dipanggil oleh GUI.
+   Tidak ada perintah siap pakai yang benar sebelum bahan tersebut dipulihkan.
+
+7. patch_final_226.py — KOREKSI MANUAL BERDASARKAN INDEKS LAMA
+   Kamus filename + nomor dialog; menimpa ALLAGES\AdvData\MES di tempat.
+   Memakai parser PC, wrapping khusus (sekitar 54), dan fallback CP932.
+   Periksa setiap kalimat Jepang/posisi saat ini sebelum memakai koreksi.
+   Untuk proyek baru, pindahkan koreksi yang cocok ke 03_JSON_EDIT agar dapat
+   divalidasi. Jangan menjalankannya sebagai langkah wajib setelah impor GUI.
+
+8. patch_final_6.py — KOREKSI MANUAL TAMBAHAN
+   Cara kerja dan risiko indeks sama dengan nomor 7. Nama file menyebut 6,
+   tetapi kamus dalam versi yang diaudit berisi 7 entri. Menimpa MES langsung.
+   Angka pada nama bukan bukti jumlah/perbaikan yang sesuai proyek baru.
+
+9. dc2_crx.py — GAMBAR PC CRX
+   Memerlukan Pillow. encode gambar ke CRX, decode CRX ke gambar, atau batch.
+   Contoh:
+     python Pipeline_Scripts\dc2_crx.py encode "gambar.png" "gambar.crx"
+     python Pipeline_Scripts\dc2_crx.py decode "gambar.crx" "gambar.png"
+     python Pipeline_Scripts\dc2_crx.py batch_convert "PNG" "CRX" --resize 800 600
+   Nama perintah batch yang benar adalah batch_convert, bukan batch.
+   Tidak diperlukan untuk mengubah teks pilihan/menu.
+
+10. dc2_crxp.py — MEMBACA GAMBAR PS2 CRXP DARI GRP.DAT
+   --grp menunjuk arsip PS2; default-nya mencoba path proyek lama.
+   list menampilkan statistik; decode memakai NAMA ENTRI arsip, bukan nama
+   file CRXP lepas; all mengekspor semua gambar. --only menyaring prefiks.
+   Contoh:
+     python Pipeline_Scripts\dc2_crxp.py list --grp "D:\Bahan\GRP.DAT"
+     python Pipeline_Scripts\dc2_crxp.py decode "NAMA_ENTRI.CRX" "gambar.png" --grp "D:\Bahan\GRP.DAT"
+     python Pipeline_Scripts\dc2_crxp.py all "PNG_PS2" --grp "D:\Bahan\GRP.DAT"
+   Nama entri harus diambil dari arsip yang benar. Encoder PNG di skrip ini
+   memakai pustaka standar Python; jangan menyamakan CRXP PS2 dengan CRX PC.
+
+11. patch_all_sce_thumbnails.py — GAMBAR KECIL SCENE REPLAY
+   Memerlukan Pillow, dc2_pcmes, dc2_crx. Membaca chip SYSTEM PC dan CG
+   pengganti; menulis chip SYSTEM All Age. Ada mapping 33 pengganti pada
+   13 daftar karakter. Memerlukan:
+     ROOT\DC2PC\AdvData\GRP\SYSTEM
+     ROOT\DC2PC\AdvData\MES
+     ROOT\ALLAGES\AdvData\GRP\bg
+   Keluaran: ROOT\ALLAGES\AdvData\GRP\SYSTEM.
+   Jalankan hanya pada pipeline gambar dengan aset lengkap, lalu tinjau hasil.
+   Tidak berhubungan dengan ukuran textbox/popup atau spacing pilihan.
+
+URUTAN PEKERJAAN PENGEMBANG YANG MASUK AKAL
+
+A. Inventaris PC/PS2/mapping/CG yang sesuai, simpan sumber tetap, buat folder
+   keluaran terpisah dan persiapkan CG viewer yang hendak dipertahankan.
+B. Bangun basis dengan rebuild_all_scripts.py setelah dependency lengkap.
+   Audit 25 adegan pengganti, 8 stub/pemanggil, voice, aset, dan control flow.
+C. Selesaikan aset gambar/thumbnail jika port membutuhkan perubahan itu.
+D. Ekspor MES All Age hasil langkah B memakai GUI; jadikan JSON ini kerangka.
+E. Cocokkan terjemahan dari referensi lama berdasarkan teks dan konteks.
+   Skrip migrasi nomor 6 hanya opsional setelah dependency/algoritmanya diaudit.
+F. Gunakan alur GUI: periksa JSON, build, uji, pasang ke salinan game.
+G. Uji route/choice/save/replay dan hasil tampilan sebelum menyusun distribusi.
+
+Tidak ada pengaturan di GUI yang mengganti ukuran textbox/popup. Source C++
+renderer pilihan terpisah dari popup_text_renderer.inl; judul window diatur
+oleh DLL patch. Membangun C# hanya memperbarui exporter/importer, bukan DLL.
+
+SOURCE DAN BUILD
+
+C#: dotnet build DC2PCMesTextTool_GUI.csproj -c Release
+Hasil: bin\Release\net8.0-windows. Halaman awal WorkflowForm.cs,
+alur TranslationWorkflow.cs, validasi ImportValidation.cs, parser MesScript.cs.
+
+C++: CMake + MSVC Desktop C++; target Win32 karena game 32-bit.
+cmake -S DC2PCPatch -B build_patch -A Win32
+cmake --build build_patch --config Release
+Memerlukan sumber Detours serta dependency lain pada proyek CMake.
+
+Jangan menyamakan hasil build tool C# dengan DC2PCPatch.dll/launcher C++.

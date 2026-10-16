@@ -1,0 +1,150 @@
+MODUL TUTORIAL — BAHASA INDONESIA
+Tool Terjemahan DC2PC | 16 Oktober 2026
+Tujuan: mengekspor teks game, mengeditnya, lalu mengimpor dan memasang perubahan.
+
+1. BUKA APLIKASI YANG BENAR
+
+Untuk mengedit terjemahan, buka Tools_Terjemahan\DC2PCMesTextTool_GUI.exe.
+Untuk bermain, gunakan DC2PCLauncher.exe di folder game.
+
+Editor dimulai dalam English. Pilih Bahasa Indonesia pada Language / Bahasa
+agar nama tombol sesuai tutorial ini. Mode manual mengikuti pilihan yang sama.
+Saat dibuka lagi, aplikasi kembali ke English. Ini tidak mengubah teks game.
+Diperlukan .NET 8 Desktop Runtime. Python dan IDA tidak diperlukan.
+
+2. PAHAMI PERBEDAAN TIGA FOLDER
+
+Folder utama game
+  Folder instalasi yang berisi DC2PC.EXE dan DC2PCLauncher.exe.
+  Pilih game yang terpasang, bukan folder paket patch hasil unduhan.
+
+MES sumber
+  Folder berisi naskah .mes yang ingin diekspor.
+  Terjemahan Indonesia saat ini: FOLDER_GAME\id_Data\MES.
+  Naskah Jepang terpasang: FOLDER_GAME\AdvData\MES.
+  MES berisi teks sekaligus perintah/cabang cerita. Jangan edit dengan Notepad.
+
+Folder proyek
+  Folder kerja terpisah untuk salinan sumber, JSON edit, hasil, dan backup.
+  BUKAN folder utama game, folder MES sumber, atau folder source_code.
+  Kolom ini awalnya KOSONG. Tidak ada lokasi Documents/OneDrive otomatis.
+  Pilih lokasi milik Anda yang bisa ditulisi. Contohnya, jika memakai drive E:
+      E:\DC2PC_Translation_Projects\ProyekPertama
+  Ini hanya contoh; Anda sendiri yang menentukan drive dan folder sebenarnya.
+
+PROYEK BARU ATAU PROYEK LAMA?
+  Pertama kali: pilih folder proyek BARU dan KOSONG lewat Pilih folder...,
+  atau ketik lokasi folder baru. Pisahkan dari folder MES sumber; jangan
+  menaruh salah satunya di dalam yang lain. Lalu klik Buat proyek + ekspor.
+  Melanjutkan pekerjaan: klik Buka proyek... dan pilih proyek.json miliknya.
+  Aplikasi mengisi Folder proyek dan MES sumber. Jangan ekspor menimpa proyek lama.
+  Folder instalasi game tidak otomatis menjadi proyek terjemahan.
+
+3. BUAT PROYEK DAN EKSPOR
+
+1) Pada Folder utama game, pilih folder yang memiliki DC2PC.EXE.
+2) Pada Basis proyek, pilih Indonesia saat ini untuk memperbaiki terjemahan
+   yang sedang dipakai patch. MES sumber seharusnya berakhir dengan id_Data\MES.
+   Jepang terpasang memilih AdvData\MES; edisinya belum terverifikasi.
+   Folder MES lain memungkinkan Anda memilih sumber sendiri.
+3) Pilih Folder proyek yang kosong sesuai lokasi kerja yang Anda inginkan.
+4) Klik 1. Buat proyek + ekspor. Tunggu sampai log menampilkan Proyek siap.
+
+Di folder proyek pilihan Anda, sekarang terdapat:
+  proyek.json       Catatan proyek; pilih ini saat membuka kembali proyek.
+  01_MES_SUMBER     Salinan MES acuan. Jangan diedit.
+  02_JSON_ASLI      JSON asli sebagai acuan. Jangan diedit.
+  03_JSON_EDIT      EDIT TERJEMAHAN ANDA DI SINI.
+  04_HASIL         Hasil impor/build yang dibuat pada langkah berikutnya.
+  05_LAPORAN       Laporan ekspor dan pemeriksaan.
+  06_BACKUP        Cadangan yang dibuat ketika memasang hasil.
+
+Ekspor saja belum mengubah game yang terpasang.
+
+4. EDIT TEKS DI JSON
+
+Klik 2. Buka JSON untuk diedit. Buka file .json dengan editor teks seperti VS Code.
+Ubah hanya isi teks pada message dan, jika sudah ada sebelumnya, name.
+
+Contoh sebelum:
+[
+  { "message": "Aku percaya padamu." }
+]
+
+Contoh sesudah:
+[
+  { "message": "Aku memercayaimu." }
+]
+
+Jangan menimpa seluruh file asli dengan contoh ini. Edit entri yang sudah ada.
+Pertahankan nama file, jumlah/urutan entri, nama kolom, kurung, dan koma.
+Jangan menambah kolom name jika entri itu sebelumnya tidak memilikinya.
+Pertahankan penanda ○ di awal teks pilihan dan urutan pilihan tersebut.
+Jika file hanya berisi [], biarkan kosong. Simpan JSON sebelum melanjutkan.
+Tanda kutip di dalam message ditulis \"; pindah baris di dalam teks memakai \n.
+Gunakan karakter biasa yang didukung CP932; hindari emoji dan kutip melengkung.
+
+5. PERIKSA, LALU IMPOR
+
+Klik 3. Periksa JSON. Lanjutkan setelah muncul Pemeriksaan lulus.
+Jika bermasalah, baca log dan 05_LAPORAN\validasi.json. Perbaiki JSON yang
+disebutkan, simpan, lalu jalankan pemeriksaan lagi.
+
+Klik 4. Impor JSON → MES. Tunggu MES siap. Lihat hasil membuka 04_HASIL.
+Setiap build memiliki folder sendiri, dengan file game di dalam id_Data\MES.
+Game masih belum berubah. Jika JSON diedit lagi, ulangi pemeriksaan/impor
+sebelum memasang. Aplikasi memasang build terakhir yang berhasil.
+
+6. PASANG DAN UJI DI GAME
+
+1) Simpan progres bermain lalu tutup DC2PC.
+2) Pastikan Folder utama game menunjuk instalasi yang ingin diperbarui.
+3) Klik 5. Pasang hasil ke game.
+4) Tunggu Terpasang. Aplikasi menyalin MES yang diedit dan peta replay terkait
+   ke id_Data setelah membuat backup dalam 06_BACKUP milik proyek Anda.
+5) Jalankan DC2PCLauncher.exe. Uji dialog, pilihan, cabang cerita, save/load,
+   dan replay yang berubah. Pemeriksaan struktur tidak menilai makna terjemahan.
+
+Untuk membatalkan pemasangan: tutup game, buka backup pemasangan tersebut,
+lalu ikuti PULIHKAN.txt. Salin file id_Data dari backup untuk menimpa file game.
+Pada pemasangan.json, existed=false berarti file baru yang dipasang; hapus
+file tersebut agar pulih sepenuhnya. Simpan backup sampai pengujian selesai.
+
+7. MELANJUTKAN DI LAIN WAKTU
+
+Buka editor > Buka proyek... > pilih proyek.json yang sama.
+Lanjutkan edit 03_JSON_EDIT, kemudian periksa, impor, dan pasang lagi.
+Pilih Folder utama game lagi jika tidak terdeteksi atau memakai instalasi lain.
+Mengganti bahasa antarmuka mempertahankan isian folder dan proyek yang dibuka.
+Pesan log lama tetap memakai bahasa saat pesan tersebut dibuat.
+
+8. JAWABAN UNTUK KENDALA UMUM
+
+Folder proyek masih kosong: memang demikian. Pilih lokasi kerja sendiri,
+atau buka proyek.json yang sudah ada. Editor tidak menebak lokasi pekerjaan Anda.
+
+Folder tidak kosong: pilih folder kosong lain untuk proyek BARU. Jika ingin
+melanjutkan proyek lama, gunakan Buka proyek, bukan Buat proyek + ekspor.
+
+Jumlah entri/penanda pilihan/name salah: pulihkan struktur yang bermasalah dari
+acuan 02_JSON_ASLI yang sesuai, lalu edit teksnya tanpa memindahkan entri.
+
+Tidak ada yang dipasang: belum ada perubahan teks dari sumber, atau Anda belum
+membuat build baru setelah mengedit. Baca hasil pemeriksaan/build.
+
+Hanya ingin mengekspor satu file? Mode manual > Satu File mengekspor MES ke JSON.
+Impor juga meminta MES sumber yang cocok. Simpan hasil ke file terpisah.
+Ekspor massal: Folder MES → Folder JSON. Impor massal: Folder JSON + Folder MES
+→ Folder hasil. Alur proyek terpandu lebih mudah untuk pemula.
+
+BATASAN SUMBER
+
+Ekspor/impor mempertahankan isi; proses ini tidak mengubah edisi menjadi All Age.
+Audit instalasi ini menemukan sisa konten 18+ di ind_0127_f3_kko.mes dan label
+cabang sumber yang rusak di ind_0127_f1_nnk.mes. Impor hasil edit naskah rusak
+tersebut ditolak. Belum dipastikan adanya sumber Jepang All Age yang bersih.
+Nama folder tidak membuktikan edisi. Baca STATUS_SUMBER.txt untuk rinciannya.
+Cocokkan JSON edisi lain berdasarkan teks/konteks, bukan nomor baris saja.
+
+Untuk skrip Python pengembang, baca PETA_PIPELINE.txt. Skrip tersebut bukan
+langkah wajib untuk mengikuti tutorial GUI ini.

@@ -1,0 +1,75 @@
+BEGINNER GUIDE — D.C.II P.C. TRANSLATION TOOL
+Interface update: 16 October 2026
+
+LANGUAGE
+The tool opens in English. Use Language / Bahasa at the top to switch to
+Bahasa Indonesia, or back to English. Manual mode uses the same language
+and also has a selector. Selection applies to this session; the next launch
+starts in English. Switching preserves paths, selected project source,
+manual inputs, tabs, wrap widths, and existing log messages.
+Language selection is disabled while a conversion is running.
+This changes the tool interface, not the game's text or language.
+Windows-owned file-dialog buttons and system errors follow Windows language.
+
+PROJECT LOCATION
+Project folder starts empty. Choose your own empty working folder for a new
+project, or use Open project to select an existing proyek.json. The editor
+does not assign a Documents or OneDrive project location.
+Use the Tutorial English / Tutorial Indonesia buttons for the step-by-step
+modules with examples: TUTORIAL_ENGLISH.txt and TUTORIAL_INDONESIA.txt.
+
+GET STARTED
+To play: run DC2PCLauncher.exe in the game folder.
+To edit: run Tools_Terjemahan\DC2PCMesTextTool_GUI.exe in the patch package.
+Keep the EXE beside its DLL, deps.json, runtimeconfig.json, and guides.
+The .NET 8 Desktop Runtime is required; Python and an SDK are not needed.
+
+MES is the binary game script, including text and story branches.
+JSON is editable text exported from MES; the game cannot read it directly.
+Import rebuilds MES using its matching source script.
+
+WORKFLOW 1–5
+1. Set Game folder to the folder containing DC2PC.EXE. Choose Current
+   Indonesian to improve the installed translation in id_Data\MES.
+   Installed Japanese selects AdvData\MES. Other MES folder lets you set
+   a source folder yourself. Choose an empty Project folder, separate from
+   the source, then click Create project + export. To continue existing
+   work, click Open project and select its proyek.json.
+2. Click Open editable JSON. Edit only message/name text in 03_JSON_EDIT.
+   Keep file names, entry count/order, name fields, and choice marker ○.
+   Leave [] files empty. Never edit 01_MES_SUMBER or 02_JSON_ASLI.
+3. Click Validate JSON. Correct any reported issues in 05_LAPORAN.
+   Structural validation does not verify translation meaning or context.
+4. Click Import JSON → MES. Output is written to 04_HASIL. Changed JSON
+   requires another build before installation. The game is not changed yet.
+5. Close the game, then click Install output to game. The tool backs up
+   affected files in 06_BACKUP before copying changed MES and replay maps
+   to id_Data. Test the changed scenes, choices, save/load, and replay.
+
+RECOVERY
+Close the game. In the relevant backup, read PULIHKAN.txt and pemasangan.json.
+Copy backed-up id_Data files to the game, overwriting the installed copies.
+Entries with existed=false were newly installed: remove them to fully undo
+that installation. Keep backups until testing is complete.
+
+MANUAL MODE
+Single File exports one MES or imports JSON using a source MES selected in
+a dialog. Use a different output path to protect the source.
+Batch exports MES Folder into JSON Folder; import combines JSON Folder and
+MES Folder and writes to Output Folder. Default wrap width remains 70.
+The guided project workflow is recommended for validation and backups.
+
+SOURCE STATUS
+Export/import preserves source content. It does not convert an edition to
+All Age or remove adult content. The installed AdvData\MES is unverified:
+the audit found remaining adult content in ind_0127_f3_kko.mes. The source
+ind_0127_f1_nnk.mes also has corrupt branch labels; edited imports are rejected.
+An All Age folder name does not establish that its contents are clean.
+Compare JSON from other editions by text/context, never by row number alone.
+STATUS_SUMBER.txt has the detailed audit in Indonesian.
+
+DEVELOPER PIPELINE
+The GUI does not require the separate Python scripts. Check pipeline inputs
+reports whether their inputs exist, without running them or validating their
+contents. Python scripts (Indonesian) opens PETA_PIPELINE.txt, documenting
+their dependencies and sequence. Some external assets/modules are absent.

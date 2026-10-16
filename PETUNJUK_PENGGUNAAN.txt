@@ -1,0 +1,77 @@
+D.C.II P.C. — PATCH TERJEMAHAN DAN TOOLS
+Pembaruan: 16 Oktober 2026
+
+STATUS PAKET
+
+Paket ini memuat terjemahan Indonesia, patch tampilan, dan hasil pekerjaan
+port All Age. Audit masih menemukan sisa konten 18+ dan satu MES dengan
+label cabang rusak. Paket BELUM terverifikasi sebagai versi All Age bersih.
+Baca STATUS_SUMBER.txt. Klaim lama mengenai 100% terjemahan, seluruh suara,
+dan semua aset bebas konten 18+ belum dibuktikan oleh pemeriksaan ini.
+
+UNTUK BERMAIN
+
+1. Tutup game dan buat salinan cadangan instalasi sebelum memasang patch.
+2. Pilih folder game yang memiliki DC2PC.EXE.
+3. Salin AdvData, id_Data, DC2PCLauncher.exe, DC2PCPatch.dll,
+   DC2PCPatch.ini, LoaderDll.dll, dan LocaleEmulator.dll dari paket ke sana.
+   Pertahankan DLL lain yang sudah tersedia bersama game.
+4. Jalankan DC2PCLauncher.exe dari folder game.
+
+Perubahan tampilan pilihan menggunakan margin kiri 16 piksel, satu spasi
+setelah lingkaran, huruf proporsional, dan penyesuaian font untuk teks panjang.
+Judul window: D.C.II P.C. ~Da Capo II~ Plus Communication All Age Edition
+Judul itu mengikuti permintaan proyek; bukan bukti bahwa isi telah bersih.
+Pengaturan ukuran popup dan textbox dipertahankan pada revisi ini.
+
+UNTUK EKSPOR DAN IMPOR TERJEMAHAN
+
+Buka Tools_Terjemahan\DC2PCMesTextTool_GUI.exe.
+Diperlukan .NET 8 Desktop Runtime. Python/IDA tidak diperlukan untuk alur ini.
+Aplikasi dimulai dalam English. Pada Language / Bahasa, pilih Bahasa Indonesia
+agar nama tombol sesuai langkah di bawah. Bahasa berlaku selama sesi ini.
+Folder proyek awalnya kosong: pilih folder kerja sendiri, terpisah dari MES
+sumber. Untuk proyek lama, klik Buka proyek dan pilih proyek.json miliknya.
+
+Modul tutorial langkah demi langkah dengan contoh:
+- TUTORIAL_ENGLISH.txt: English.
+- TUTORIAL_INDONESIA.txt: Bahasa Indonesia.
+Keduanya juga tersedia lewat tombol Tutorial English / Tutorial Indonesia.
+
+1. Pilih MES sumber dan folder proyek kosong, lalu Buat proyek + ekspor.
+2. Edit message/name dalam 03_JSON_EDIT tanpa mengubah urutan/struktur.
+3. Periksa JSON.
+4. Impor JSON -> MES. Hasil disimpan terpisah untuk ditinjau.
+5. Tutup game lalu Pasang hasil. Aplikasi membuat backup terlebih dahulu.
+
+Gunakan basis id_Data\MES untuk koreksi terjemahan Indonesia yang terpasang.
+AdvData\MES adalah sumber Jepang terpasang; edisinya belum terverifikasi.
+JSON sendiri tidak cukup untuk impor: MES sumber yang cocok tetap diperlukan.
+Baca PANDUAN_PEMULA.txt untuk langkah lengkap, contoh, dan pemulihan backup.
+Baca PETA_PIPELINE.txt untuk fungsi dan kebutuhan sebelas skrip Python.
+
+SOURCE CODE
+
+source_code\DC2PCMesTextTool_GUI : aplikasi C# exporter/importer
+source_code\DC2PCPatch           : patch C++ dan launcher
+source_code\Pipeline_Scripts    : skrip port/pengolahan data
+
+Dependency data PC/PS2 dan mapping untuk rebuild port belum lengkap pada
+folder tools. Aplikasi ekspor/impor dapat digunakan tanpa menjalankan ulang
+pipeline port. Lihat source_code\README.md untuk build dari kode.
+
+RELEASE DAN UJI VERSI INGGRIS
+
+Repository proyek: https://github.com/SakuraSymphonyReTranslation/DC2PC-AllAges-Port-Patch
+Release menyediakan DC2PC_AllAges_Patch DLL + Executable.rar untuk runtime,
+serta Tools_Terjemahan_or_Translate.rar untuk editor dan tutorial.
+AdvData/id_Data tersedia dalam ZIP repository, bukan kedua arsip RAR.
+
+Patch bisa dicoba pada Da Capo 2 Plus Communication All Age bahasa Inggris;
+kompatibilitas belum terverifikasi. Pertahankan naskah Inggris Anda dan baca
+INSTALL_EN_ID.txt sebelum mencoba. Antarmuka English pada tools tidak
+mengubah bahasa game; alur pasang tools tetap menulis ke id_Data.
+
+Baca STATUS_SUMBER.txt untuk masalah korpus yang masih terbuka. Periksa
+kecocokan terjemahan serta pilihan, cabang, save/load, replay, dan aset game.
+Folder paket diperbarui terpisah dari instalasi game.

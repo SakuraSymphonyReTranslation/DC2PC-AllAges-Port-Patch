@@ -1,0 +1,658 @@
+{
+  "DC2PC — Alur Ekspor / Impor Terjemahan": [
+    "DC2PC — Translation Export / Import Workflow",
+    "DC2PC — Alur Ekspor / Impor Terjemahan"
+  ],
+  "Mulai dengan memilih MES sumber dan folder proyek baru.": [
+    "Start by choosing the source MES and a new project folder.",
+    "Mulai dengan memilih MES sumber dan folder proyek baru."
+  ],
+  "Pilih folder...": [
+    "Browse...",
+    "Pilih folder..."
+  ],
+  "Dari MES ke JSON, lalu kembali ke game": [
+    "From MES to JSON, then back to the game",
+    "Dari MES ke JSON, lalu kembali ke game"
+  ],
+  "Ikuti langkah 1–5. Untuk memperbaiki terjemahan yang sekarang, pilih basis Indonesia. Proyek lama dapat dilanjutkan lewat Buka proyek.": [
+    "Follow steps 1–5. To improve the current translation, choose the Indonesian source. Use Open project to continue an existing project.",
+    "Ikuti langkah 1–5. Untuk memperbaiki terjemahan yang sekarang, pilih basis Indonesia. Proyek lama dapat dilanjutkan lewat Buka proyek."
+  ],
+  "Folder utama game": [
+    "Game folder",
+    "Folder utama game"
+  ],
+  "Basis proyek": [
+    "Project source",
+    "Basis proyek"
+  ],
+  "Indonesia saat ini — id_Data\\MES": [
+    "Current Indonesian — id_Data\\MES",
+    "Indonesia saat ini — id_Data\\MES"
+  ],
+  "Jepang terpasang — AdvData\\MES (edisi belum terverifikasi)": [
+    "Installed Japanese — AdvData\\MES (edition unverified)",
+    "Jepang terpasang — AdvData\\MES (edisi belum terverifikasi)"
+  ],
+  "Folder MES lain — pilih sendiri": [
+    "Other MES folder — choose manually",
+    "Folder MES lain — pilih sendiri"
+  ],
+  "MES sumber": [
+    "Source MES",
+    "MES sumber"
+  ],
+  "Ekspor/impor mempertahankan isi sumber; proses ini tidak mengubah edisi menjadi All Age. Audit instalasi ini menemukan sisa konten 18+ di AdvData\\MES. Baca STATUS_SUMBER.txt sebelum menjadikannya acuan All Age.": [
+    "Export/import preserves the source content; it does not convert an edition to All Age. This installation's audit found remaining adult content in AdvData\\MES. Read STATUS_SUMBER.txt (Indonesian) before using it as an All Age reference.",
+    "Ekspor/impor mempertahankan isi sumber; proses ini tidak mengubah edisi menjadi All Age. Audit instalasi ini menemukan sisa konten 18+ di AdvData\\MES. Baca STATUS_SUMBER.txt sebelum menjadikannya acuan All Age."
+  ],
+  "Folder proyek": [
+    "Project folder",
+    "Folder proyek"
+  ],
+  "1. Buat proyek + ekspor": [
+    "1. Create project + export",
+    "1. Buat proyek + ekspor"
+  ],
+  "Buka proyek...": [
+    "Open project...",
+    "Buka proyek..."
+  ],
+  "2. Edit hanya isi message/name di 03_JSON_EDIT. Pertahankan nama file, urutan entri, dan ○. JSON 18+ perlu dicocokkan per teks/konteks; jangan langsung mengganti seluruh folder.": [
+    "2. Edit only message/name text in 03_JSON_EDIT. Keep file names, entry order, and ○ markers. Compare adult-edition JSON by text and context; do not replace entire folders with it.",
+    "2. Edit hanya isi message/name di 03_JSON_EDIT. Pertahankan nama file, urutan entri, dan ○. JSON 18+ perlu dicocokkan per teks/konteks; jangan langsung mengganti seluruh folder."
+  ],
+  "2. Buka JSON untuk diedit": [
+    "2. Open editable JSON",
+    "2. Buka JSON untuk diedit"
+  ],
+  "Buka JSON acuan": [
+    "Open reference JSON",
+    "Buka JSON acuan"
+  ],
+  "3. Periksa JSON": [
+    "3. Validate JSON",
+    "3. Periksa JSON"
+  ],
+  "4. Impor JSON → MES": [
+    "4. Import JSON → MES",
+    "4. Impor JSON → MES"
+  ],
+  "Lihat hasil": [
+    "View output",
+    "Lihat hasil"
+  ],
+  "5. Tutup game sebelum memasang. Hanya file MES yang diedit beserta peta replay terkait yang disalin ke id_Data; backup dibuat lebih dahulu. Setelah itu uji adegan, pilihan, save/load, dan replay yang Anda ubah.": [
+    "5. Close the game before installing. Edited MES files and related replay maps are copied to id_Data after a backup is made. Then test the scenes, choices, save/load, and replays you changed.",
+    "5. Tutup game sebelum memasang. Hanya file MES yang diedit beserta peta replay terkait yang disalin ke id_Data; backup dibuat lebih dahulu. Setelah itu uji adegan, pilihan, save/load, dan replay yang Anda ubah."
+  ],
+  "5. Pasang hasil ke game": [
+    "5. Install output to game",
+    "5. Pasang hasil ke game"
+  ],
+  "Buka backup": [
+    "Open backups",
+    "Buka backup"
+  ],
+  "Buka laporan": [
+    "Open reports",
+    "Buka laporan"
+  ],
+  "Panduan pemula": [
+    "Beginner guide",
+    "Panduan pemula"
+  ],
+  "Daftar skrip Python": [
+    "Python scripts (Indonesian)",
+    "Daftar skrip Python"
+  ],
+  "Cek bahan pipeline": [
+    "Check pipeline inputs",
+    "Cek bahan pipeline"
+  ],
+  "Mode manual": [
+    "Manual mode",
+    "Mode manual"
+  ],
+  "DC2PC — Mode Manual (lanjutan)": [
+    "DC2PC — Manual Mode (advanced)",
+    "DC2PC — Mode Manual (lanjutan)"
+  ],
+  "Ekspor: MES Folder -> JSON Folder.\nImpor: JSON Folder + MES Folder -> Output Folder.": [
+    "Export: MES folder -> JSON folder.\nImport: JSON folder + MES folder -> output folder.",
+    "Ekspor: MES Folder -> JSON Folder.\nImpor: JSON Folder + MES Folder -> Output Folder."
+  ],
+  "Single File": [
+    "Single File",
+    "Satu File"
+  ],
+  "Batch": [
+    "Batch",
+    "Banyak File"
+  ],
+  "Input MES/JSON:": [
+    "Input MES/JSON:",
+    "Masukan MES/JSON:"
+  ],
+  "Output JSON/MES:": [
+    "Output JSON/MES:",
+    "Hasil JSON/MES:"
+  ],
+  "Word Wrap Width:": [
+    "Word Wrap Width:",
+    "Lebar baris teks:"
+  ],
+  "Export (MES -> JSON)": [
+    "Export (MES -> JSON)",
+    "Ekspor (MES -> JSON)"
+  ],
+  "Import (JSON -> MES)": [
+    "Import (JSON -> MES)",
+    "Impor (JSON -> MES)"
+  ],
+  "JSON Folder:": [
+    "JSON Folder:",
+    "Folder JSON:"
+  ],
+  "MES Folder:": [
+    "MES Folder:",
+    "Folder MES:"
+  ],
+  "Output Folder:": [
+    "Output Folder:",
+    "Folder hasil:"
+  ],
+  "Batch Export (MES -> JSON)": [
+    "Batch Export (MES -> JSON)",
+    "Ekspor massal (MES -> JSON)"
+  ],
+  "Batch Import (JSON -> MES)": [
+    "Batch Import (JSON -> MES)",
+    "Impor massal (JSON -> MES)"
+  ],
+  "Language / Bahasa": [
+    "Language / Bahasa",
+    "Language / Bahasa"
+  ],
+  "Periksa langkah ini": [
+    "Check this step",
+    "Periksa langkah ini"
+  ],
+  "Proses masih berjalan. Tunggu sampai selesai agar berkas tidak terputus.": [
+    "Processing is still in progress. Wait for it to finish to avoid incomplete files.",
+    "Proses masih berjalan. Tunggu sampai selesai agar berkas tidak terputus."
+  ],
+  "Belum selesai: ": [
+    "Not completed: ",
+    "Belum selesai: "
+  ],
+  "Perlu diperbaiki: ": [
+    "Needs attention: ",
+    "Perlu diperbaiki: "
+  ],
+  "Proyek terjemahan (proyek.json)": [
+    "Translation project (proyek.json)",
+    "Proyek terjemahan (proyek.json)"
+  ],
+  "Proyek dibuka: {0} file. Lanjutkan edit, periksa JSON, atau buat MES.": [
+    "Project opened: {0} files. Continue editing, validate JSON, or build MES.",
+    "Proyek dibuka: {0} file. Lanjutkan edit, periksa JSON, atau buat MES."
+  ],
+  "Folder belum ada. Buat atau buka proyek dahulu.": [
+    "This folder does not exist yet. Create or open a project first.",
+    "Folder belum ada. Buat atau buka proyek dahulu."
+  ],
+  "Panduan belum ada di sebelah aplikasi: ": [
+    "Guide not found beside the application: ",
+    "Panduan belum ada di sebelah aplikasi: "
+  ],
+  "Pipeline_Scripts tidak ditemukan. Alur GUI tetap dapat dipakai tanpa Python. Baca PETA_PIPELINE.txt.": [
+    "Pipeline_Scripts was not found. The GUI workflow works without Python. See PETA_PIPELINE.txt (Indonesian).",
+    "Pipeline_Scripts tidak ditemukan. Alur GUI tetap dapat dipakai tanpa Python. Baca PETA_PIPELINE.txt."
+  ],
+  "Pemeriksaan bahan (tidak menjalankan skrip)": [
+    "Input check (does not run scripts)",
+    "Pemeriksaan bahan (tidak menjalankan skrip)"
+  ],
+  "GUI ekspor/impor memakai .NET 8, tidak memerlukan Python.": [
+    "GUI export/import uses .NET 8 and does not require Python.",
+    "GUI ekspor/impor memakai .NET 8, tidak memerlukan Python."
+  ],
+  "Bahan untuk rebuild_all_scripts.py:": [
+    "Inputs for rebuild_all_scripts.py:",
+    "Bahan untuk rebuild_all_scripts.py:"
+  ],
+  "[ADA] ": [
+    "[FOUND] ",
+    "[ADA] "
+  ],
+  "[BELUM ADA] ": [
+    "[MISSING] ",
+    "[BELUM ADA] "
+  ],
+  "Pemeriksaan ini hanya memeriksa keberadaan; isi mapping/CG juga harus sesuai.": [
+    "This check only confirms existence; mapping/CG contents must also match.",
+    "Pemeriksaan ini hanya memeriksa keberadaan; isi mapping/CG juga harus sesuai."
+  ],
+  "apply_translations_to_ss_json.py masih mengacu E:/projek atho/dc2ps dan modul dc2_transfer yang tidak dibundel.": [
+    "apply_translations_to_ss_json.py still references E:/projek atho/dc2ps and the unbundled dc2_transfer module.",
+    "apply_translations_to_ss_json.py masih mengacu E:/projek atho/dc2ps dan modul dc2_transfer yang tidak dibundel."
+  ],
+  "patch_final_226.py / patch_final_6.py menimpa naskah dengan indeks dari proyek lama. Tidak dijalankan oleh alur GUI.": [
+    "patch_final_226.py / patch_final_6.py overwrite scripts using indexes from an older project. The GUI workflow does not run them.",
+    "patch_final_226.py / patch_final_6.py menimpa naskah dengan indeks dari proyek lama. Tidak dijalankan oleh alur GUI."
+  ],
+  "Baca PETA_PIPELINE.txt untuk masukan, keluaran, dan urutan pipeline khusus.": [
+    "See PETA_PIPELINE.txt (Indonesian) for inputs, outputs, and the specialized pipeline sequence.",
+    "Baca PETA_PIPELINE.txt untuk masukan, keluaran, dan urutan pipeline khusus."
+  ],
+  "Pilih MES sumber yang dipakai untuk mengekspor JSON ini": [
+    "Select the source MES used to export this JSON",
+    "Pilih MES sumber yang dipakai untuk mengekspor JSON ini"
+  ],
+  "Naskah MES": [
+    "MES scripts",
+    "Naskah MES"
+  ],
+  "Selesai.": [
+    "Completed.",
+    "Selesai."
+  ],
+  "Ada kegagalan; periksa log. Jangan pasang hasil parsial.": [
+    "Some operations failed; check the log. Do not install partial output.",
+    "Ada kegagalan; periksa log. Jangan pasang hasil parsial."
+  ],
+  "Gagal: ": [
+    "Failed: ",
+    "Gagal: "
+  ],
+  "Nama file/folder dalam catatan proyek tidak valid.": [
+    "Invalid file/folder name in the project manifest.",
+    "Nama file/folder dalam catatan proyek tidak valid."
+  ],
+  "Catatan proyek tidak terbaca.": [
+    "The project manifest could not be read.",
+    "Catatan proyek tidak terbaca."
+  ],
+  "Versi/proyek tidak valid.": [
+    "Invalid project or manifest version.",
+    "Versi/proyek tidak valid."
+  ],
+  "Folder MES sumber tidak ditemukan.": [
+    "The source MES folder was not found.",
+    "Folder MES sumber tidak ditemukan."
+  ],
+  "Folder proyek harus terpisah dari folder MES sumber.": [
+    "The project folder must be separate from the source MES folder.",
+    "Folder proyek harus terpisah dari folder MES sumber."
+  ],
+  "Pilih folder proyek baru yang kosong. Untuk proyek lama gunakan Buka proyek.": [
+    "Choose a new, empty project folder. Use Open project for an existing project.",
+    "Pilih folder proyek baru yang kosong. Untuk proyek lama gunakan Buka proyek."
+  ],
+  "Folder sumber tidak memiliki file .mes langsung di dalamnya.": [
+    "The source folder has no .mes files directly inside it.",
+    "Folder sumber tidak memiliki file .mes langsung di dalamnya."
+  ],
+  "Ekspor {0} gagal. Lihat 05_LAPORAN/ekspor.txt; gunakan folder proyek baru setelah memperbaiki sumber.": [
+    "Export failed for {0}. See 05_LAPORAN/ekspor.txt; use a new project folder after fixing the source.",
+    "Ekspor {0} gagal. Lihat 05_LAPORAN/ekspor.txt; gunakan folder proyek baru setelah memperbaiki sumber."
+  ],
+  "Ekspor {0}/{1} file...": [
+    "Exporting {0}/{1} files...",
+    "Ekspor {0}/{1} file..."
+  ],
+  "Proyek siap: {0} file. Edit teks di {1}.": [
+    "Project ready: {0} files. Edit text in {1}.",
+    "Proyek siap: {0} file. Edit teks di {1}."
+  ],
+  "Ada JSON dalam subfolder. Taruh file langsung di 03_JSON_EDIT; subfolder tidak diimpor.": [
+    "JSON files were found in subfolders. Place files directly in 03_JSON_EDIT; subfolders are not imported.",
+    "Ada JSON dalam subfolder. Taruh file langsung di 03_JSON_EDIT; subfolder tidak diimpor."
+  ],
+  "{0}: bukan bagian proyek sumber.": [
+    "{0}: not part of the source project.",
+    "{0}: bukan bagian proyek sumber."
+  ],
+  "Salinan MES sumber berubah.": [
+    "The source MES copy has changed.",
+    "Salinan MES sumber berubah."
+  ],
+  "JSON acuan berubah.": [
+    "The reference JSON has changed.",
+    "JSON acuan berubah."
+  ],
+  "JSON edit hilang.": [
+    "The editable JSON is missing.",
+    "JSON edit hilang."
+  ],
+  "Memeriksa {0}/{1} file...": [
+    "Checking {0}/{1} files...",
+    "Memeriksa {0}/{1} file..."
+  ],
+  "{0} masalah. {1}\nRincian: 05_LAPORAN/validasi.json": [
+    "{0} problems. {1}\nDetails: 05_LAPORAN/validasi.json",
+    "{0} masalah. {1}\nRincian: 05_LAPORAN/validasi.json"
+  ],
+  "Pemeriksaan lulus: {0} file, {1} file diedit. Kecocokan makna/urutan tetap perlu diperiksa manusia.": [
+    "Validation passed: {0} files, {1} edited. Meaning and order still require human review.",
+    "Pemeriksaan lulus: {0} file, {1} file diedit. Kecocokan makna/urutan tetap perlu diperiksa manusia."
+  ],
+  "Impor {0} gagal; lihat {1}/impor.txt. Hasil belum dapat dipasang.": [
+    "Import failed for {0}; see {1}/impor.txt. The output cannot be installed yet.",
+    "Impor {0} gagal; lihat {1}/impor.txt. Hasil belum dapat dipasang."
+  ],
+  "{0}: {1} Hasil belum dapat dipasang.": [
+    "{0}: {1} The output cannot be installed yet.",
+    "{0}: {1} Hasil belum dapat dipasang."
+  ],
+  "{0} diedit ketika build berjalan. Ulangi Buat MES setelah selesai mengedit.": [
+    "{0} was edited during the build. Run Import JSON → MES again after editing is finished.",
+    "{0} diedit ketika build berjalan. Ulangi Buat MES setelah selesai mengedit."
+  ],
+  "Membuat MES {0}/{1}...": [
+    "Building MES {0}/{1}...",
+    "Membuat MES {0}/{1}..."
+  ],
+  "JSON berubah selama build. Ulangi Buat MES.": [
+    "JSON changed during the build. Run Import JSON → MES again.",
+    "JSON berubah selama build. Ulangi Buat MES."
+  ],
+  "MES siap: {0} file berubah. Hasil: {1}. Game belum diubah.": [
+    "MES ready: {0} changed files. Output: {1}. The game has not been modified.",
+    "MES siap: {0} file berubah. Hasil: {1}. Game belum diubah."
+  ],
+  "Pilih folder utama game yang memiliki DC2PC.EXE.": [
+    "Select the game folder containing DC2PC.EXE.",
+    "Pilih folder utama game yang memiliki DC2PC.EXE."
+  ],
+  "Tutup game DC2PC terlebih dahulu, lalu tekan Pasang hasil lagi.": [
+    "Close the DC2PC game first, then click Install output to game again.",
+    "Tutup game DC2PC terlebih dahulu, lalu tekan Pasang hasil lagi."
+  ],
+  "Folder proyek tidak boleh berada di dalam id_Data.": [
+    "The project folder must not be inside id_Data.",
+    "Folder proyek tidak boleh berada di dalam id_Data."
+  ],
+  "JSON berubah sejak build terakhir. Tekan Buat MES lagi.": [
+    "JSON has changed since the last build. Run Import JSON → MES again.",
+    "JSON berubah sejak build terakhir. Tekan Buat MES lagi."
+  ],
+  "File hasil berubah. Tekan Buat MES lagi.": [
+    "Output files have changed. Run Import JSON → MES again.",
+    "File hasil berubah. Tekan Buat MES lagi."
+  ],
+  "Tidak ada file diedit; tidak ada yang perlu dipasang.": [
+    "No edited files; nothing to install.",
+    "Tidak ada file diedit; tidak ada yang perlu dipasang."
+  ],
+  "Daftar hasil tidak lengkap. Buat MES ulang.": [
+    "The output list is incomplete. Run Import JSON → MES again.",
+    "Daftar hasil tidak lengkap. Buat MES ulang."
+  ],
+  "Salinan gagal diverifikasi: {0}": [
+    "Could not verify the copied file: {0}",
+    "Salinan gagal diverifikasi: {0}"
+  ],
+  "selesai": [
+    "completed",
+    "selesai"
+  ],
+  "perlu pemulihan manual": [
+    "manual recovery required",
+    "perlu pemulihan manual"
+  ],
+  "Terpasang: {0} MES dan {1} peta replay. Backup: {2}. Jalankan launcher dan uji adegan yang diubah.": [
+    "Installed: {0} MES files and {1} replay maps. Backup: {2}. Run the launcher and test the changed scenes.",
+    "Terpasang: {0} MES dan {1} peta replay. Backup: {2}. Jalankan launcher dan uji adegan yang diubah."
+  ],
+  "JSON harus berupa daftar [ ... ] dari exporter GUI.": [
+    "JSON must be an array [ ... ] produced by the GUI exporter.",
+    "JSON harus berupa daftar [ ... ] dari exporter GUI."
+  ],
+  "Baris {0}: harus berupa objek message/name.": [
+    "Row {0}: expected a message/name object.",
+    "Baris {0}: harus berupa objek message/name."
+  ],
+  "Baris {0}: kolom {1} tidak valid. Gunakan message dan name (jika ada) berupa teks.": [
+    "Row {0}: invalid field {1}. Use text values for message and name (if present).",
+    "Baris {0}: kolom {1} tidak valid. Gunakan message dan name (jika ada) berupa teks."
+  ],
+  "Baris {0}: message hilang.": [
+    "Row {0}: message is missing.",
+    "Baris {0}: message hilang."
+  ],
+  "Jumlah entri berbeda: sumber {0}, edit {1}. Jangan menambah, membuang, atau memasukkan JSON edisi lain.": [
+    "Entry count differs: source {0}, edited {1}. Do not add/remove entries or insert JSON from another edition.",
+    "Jumlah entri berbeda: sumber {0}, edit {1}. Jangan menambah, membuang, atau memasukkan JSON edisi lain."
+  ],
+  "Entri {0}: kolom name harus tetap ada/tidak ada seperti sumber dan tidak boleh kosong.": [
+    "Entry {0}: keep the name field present/absent as in the source; it must not be blank.",
+    "Entri {0}: kolom name harus tetap ada/tidak ada seperti sumber dan tidak boleh kosong."
+  ],
+  "Entri {0}: posisi penanda pilihan ○ berbeda. Pertahankan penanda dan urutan pilihan.": [
+    "Entry {0}: choice marker ○ differs. Preserve the markers and choice order.",
+    "Entri {0}: posisi penanda pilihan ○ berbeda. Pertahankan penanda dan urutan pilihan."
+  ],
+  "Entri {0}: teks tidak boleh dikosongkan.": [
+    "Entry {0}: text must not be blank.",
+    "Entri {0}: teks tidak boleh dikosongkan."
+  ],
+  "Entri {0}: karakter kontrol tidak didukung.": [
+    "Entry {0}: unsupported control character.",
+    "Entri {0}: karakter kontrol tidak didukung."
+  ],
+  "Entri {0}: karakter tidak tersedia di CP932. Ganti emoji/tanda kutip melengkung dengan teks biasa.": [
+    "Entry {0}: character unavailable in CP932. Replace emoji/curly quotes with plain text.",
+    "Entri {0}: karakter tidak tersedia di CP932. Ganti emoji/tanda kutip melengkung dengan teks biasa."
+  ],
+  "Struktur token/label hasil berubah.": [
+    "The output token/label structure changed.",
+    "Struktur token/label hasil berubah."
+  ],
+  "Opcode berubah pada token {0}.": [
+    "Opcode changed at token {0}.",
+    "Opcode berubah pada token {0}."
+  ],
+  "Data selain teks berubah pada token {0}.": [
+    "Non-text data changed at token {0}.",
+    "Data selain teks berubah pada token {0}."
+  ],
+  "Tujuan cabang label {0} tidak cocok.": [
+    "Branch target for label {0} does not match.",
+    "Tujuan cabang label {0} tidak cocok."
+  ],
+  "Parser tidak mencakup seluruh MES; impor dihentikan.": [
+    "The parser does not cover the entire MES; import stopped.",
+    "Parser tidak mencakup seluruh MES; impor dihentikan."
+  ],
+  "Jumlah teks tidak cocok: MES {0}, JSON {1}. Gunakan JSON hasil ekspor MES yang sama.": [
+    "Text count differs: MES {0}, JSON {1}. Use JSON exported from the same MES.",
+    "Jumlah teks tidak cocok: MES {0}, JSON {1}. Gunakan JSON hasil ekspor MES yang sama."
+  ],
+  "Label sumber {0} tidak menunjuk awal token MES; impor dihentikan.": [
+    "Source label {0} does not point to the start of a MES token; import stopped.",
+    "Label sumber {0} tidak menunjuk awal token MES; impor dihentikan."
+  ],
+  "Output harus berbeda dari MES sumber. Gunakan folder hasil terpisah.": [
+    "Output must differ from the source MES. Use a separate output folder.",
+    "Output harus berbeda dari MES sumber. Gunakan folder hasil terpisah."
+  ],
+  "OK (tidak diubah; MES disalin persis)": [
+    "OK (unchanged; MES copied exactly)",
+    "OK (tidak diubah; MES disalin persis)"
+  ],
+  "Unsupported MES file: expected DC2PC version 0x9969": [
+    "Unsupported MES file: expected DC2PC version 0x9969",
+    "File MES tidak didukung: diperlukan DC2PC versi 0x9969"
+  ],
+  "MES file too small": [
+    "MES file too small",
+    "File MES terlalu kecil"
+  ],
+  "Invalid DC2PC MES label count": [
+    "Invalid DC2PC MES label count",
+    "Jumlah label MES DC2PC tidak valid"
+  ],
+  "Invalid MES structure": [
+    "Invalid MES structure",
+    "Struktur MES tidak valid"
+  ],
+  "Choice contains an unsupported control character.": [
+    "Choice contains an unsupported control character.",
+    "Pilihan mengandung karakter kontrol yang tidak didukung."
+  ],
+  "Choice text is empty. Enter a label after ○.": [
+    "Choice text is empty. Enter a label after ○.",
+    "Teks pilihan kosong. Masukkan teks setelah ○."
+  ],
+  "Error: {0}": [
+    "Error: {0}",
+    "Kesalahan: {0}"
+  ],
+  "Exporting {0}... ": [
+    "Exporting {0}... ",
+    "Mengekspor {0}... "
+  ],
+  "Warning: {0} likely Japanese text candidate(s) were not exported.": [
+    "Warning: {0} likely Japanese text candidate(s) were not exported.",
+    "Peringatan: {0} kandidat teks Jepang mungkin tidak terekspor."
+  ],
+  ", no JP text candidates": [
+    ", no JP text candidates",
+    ", tidak ada kandidat teks Jepang"
+  ],
+  "OK ({0} entries{1})": [
+    "OK ({0} entries{1})",
+    "OK ({0} entri{1})"
+  ],
+  "Failed to export {0}: {1}": [
+    "Failed to export {0}: {1}",
+    "Gagal mengekspor {0}: {1}"
+  ],
+  "Importing {0}... ": [
+    "Importing {0}... ",
+    "Mengimpor {0}... "
+  ],
+  "Using scene replay full-title mode: imported full Indonesian titles with Latin spaces.": [
+    "Using scene replay full-title mode: imported full Indonesian titles with Latin spaces.",
+    "Mode judul replay lengkap: mengimpor judul Indonesia lengkap dengan spasi Latin."
+  ],
+  "OK ({0} replay entries -> {1} full-title entries)": [
+    "OK ({0} replay entries -> {1} full-title entries)",
+    "OK ({0} entri replay -> {1} entri judul lengkap)"
+  ],
+  "OK ({0} entries -> {1} expanded)": [
+    "OK ({0} entries -> {1} expanded)",
+    "OK ({0} entri -> {1} diperluas)"
+  ],
+  "Failed to import {0}: {1}": [
+    "Failed to import {0}: {1}",
+    "Gagal mengimpor {0}: {1}"
+  ],
+  "Folder not found: {0}": [
+    "Folder not found: {0}",
+    "Folder tidak ditemukan: {0}"
+  ],
+  "Found {0} MES files in {1}": [
+    "Found {0} MES files in {1}",
+    "Ditemukan {0} file MES di {1}"
+  ],
+  "Batch Export Completed: {0} success, {1} failed": [
+    "Batch Export Completed: {0} success, {1} failed",
+    "Ekspor massal selesai: {0} berhasil, {1} gagal"
+  ],
+  "JSON folder not found: {0}": [
+    "JSON folder not found: {0}",
+    "Folder JSON tidak ditemukan: {0}"
+  ],
+  "MES folder not found: {0}": [
+    "MES folder not found: {0}",
+    "Folder MES tidak ditemukan: {0}"
+  ],
+  "Found {0} JSON files (wrap width: {1})": [
+    "Found {0} JSON files (wrap width: {1})",
+    "Ditemukan {0} file JSON (lebar baris: {1})"
+  ],
+  "Skipping {0} - original MES not found": [
+    "Skipping {0} - original MES not found",
+    "Melewati {0} - MES sumber tidak ditemukan"
+  ],
+  "Batch Import Completed: {0} success, {1} failed": [
+    "Batch Import Completed: {0} success, {1} failed",
+    "Impor massal selesai: {0} berhasil, {1} gagal"
+  ],
+  "Pemasangan gagal: {0}. Pemulihan otomatis: {1}. Backup: {2}": [
+    "Installation failed: {0}. Automatic recovery: {1}. Backup: {2}",
+    "Pemasangan gagal: {0}. Pemulihan otomatis: {1}. Backup: {2}"
+  ],
+  "Pilih folder": [
+    "Select folder",
+    "Pilih folder"
+  ],
+  "Buka file MES atau JSON": [
+    "Open MES or JSON file",
+    "Buka file MES atau JSON"
+  ],
+  "Simpan file hasil": [
+    "Save output file",
+    "Simpan file hasil"
+  ],
+  "Buka proyek terjemahan": [
+    "Open translation project",
+    "Buka proyek terjemahan"
+  ],
+  "Catatan proyek tidak ditemukan. Buat atau buka proyek dahulu.": [
+    "Project manifest not found. Create or open a project first.",
+    "Catatan proyek tidak ditemukan. Buat atau buka proyek dahulu."
+  ],
+  "Edit hanya JSON dalam 03_JSON_EDIT. Pertahankan nama file, urutan, jumlah entri, kolom name/message, dan penanda ○.\r\n": [
+    "Edit only JSON in 03_JSON_EDIT. Preserve file names, order, entry count, name/message fields, and ○ markers.\r\n",
+    "Edit hanya JSON dalam 03_JSON_EDIT. Pertahankan nama file, urutan, jumlah entri, kolom name/message, dan penanda ○.\r\n"
+  ],
+  "Buka proyek ini di DC2PCMesTextTool_GUI.exe: Periksa JSON > Buat MES > Pasang hasil.\r\n": [
+    "Open this project in DC2PCMesTextTool_GUI.exe: Validate JSON > Import JSON → MES > Install output to game.\r\n",
+    "Buka proyek ini di DC2PCMesTextTool_GUI.exe: Periksa JSON > Buat MES > Pasang hasil.\r\n"
+  ],
+  "01_MES_SUMBER dan 02_JSON_ASLI adalah salinan acuan; jangan diedit. File [] adalah naskah tanpa teks.\r\n": [
+    "01_MES_SUMBER and 02_JSON_ASLI are reference copies; do not edit them. Files containing [] are scripts without text.\r\n",
+    "01_MES_SUMBER dan 02_JSON_ASLI adalah salinan acuan; jangan diedit. File [] adalah naskah tanpa teks.\r\n"
+  ],
+  "JSON edisi lain tidak boleh ditempel massal berdasarkan nomor baris. Cocokkan teks/konteks dengan MES sumber.\r\n": [
+    "Do not bulk-paste JSON from another edition by line number. Match text/context with the source MES.\r\n",
+    "JSON edisi lain tidak boleh ditempel massal berdasarkan nomor baris. Cocokkan teks/konteks dengan MES sumber.\r\n"
+  ],
+  "Ekspor/impor tidak memverifikasi edisi atau membuang konten 18+. Gunakan sumber yang telah diaudit bila menargetkan All Age.\r\n": [
+    "Export/import does not verify the edition or remove adult content. Use an audited source when targeting All Age.\r\n",
+    "Ekspor/impor tidak memverifikasi edisi atau membuang konten 18+. Gunakan sumber yang telah diaudit bila menargetkan All Age.\r\n"
+  ],
+  "Tutup game. Salin isi folder id_Data di backup ini ke ": [
+    "Close the game. Copy the contents of this backup's id_Data folder to ",
+    "Tutup game. Salin isi folder id_Data di backup ini ke "
+  ],
+  "\\id_Data dengan timpa file.\r\nLihat pemasangan.json: file dengan existed=false adalah file baru, hapus file itu jika ingin pulih sepenuhnya.\r\n": [
+    "\\id_Data, overwriting existing files.\r\nSee pemasangan.json: files with existed=false were newly installed; remove those files for a full recovery.\r\n",
+    "\\id_Data dengan timpa file.\r\nLihat pemasangan.json: file dengan existed=false adalah file baru, hapus file itu jika ingin pulih sepenuhnya.\r\n"
+  ],
+  "Pilih folder proyek sendiri...": [
+    "Choose your project folder...",
+    "Pilih folder proyek sendiri..."
+  ],
+  "Pilih folder kerja kosong untuk proyek baru, atau klik Buka proyek untuk melanjutkan proyek yang memiliki proyek.json. Folder proyek bukan folder utama game.": [
+    "Choose an empty working folder for a new project, or click Open project to continue one with a proyek.json file. The project folder is separate from the game folder.",
+    "Pilih folder kerja kosong untuk proyek baru, atau klik Buka proyek untuk melanjutkan proyek yang memiliki proyek.json. Folder proyek bukan folder utama game."
+  ],
+  "Pilih folder proyek atau buka proyek.json dahulu.": [
+    "Choose a project folder or open proyek.json first.",
+    "Pilih folder proyek atau buka proyek.json dahulu."
+  ],
+  "Pilih folder MES sumber dahulu.": [
+    "Choose the source MES folder first.",
+    "Pilih folder MES sumber dahulu."
+  ],
+  "Pilih folder kerja kosong untuk proyek baru dahulu.": [
+    "Choose an empty working folder for the new project first.",
+    "Pilih folder kerja kosong untuk proyek baru dahulu."
+  ]
+}

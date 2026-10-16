@@ -1,0 +1,35 @@
+STATUS SUMBER DAN BATAS VERIFIKASI — 16 OKTOBER 2026
+
+AdvData\MES adalah naskah Jepang yang TERPASANG. Belum dapat dinyatakan
+raw JP All Age resmi ataupun korpus yang bebas konten 18+.
+
+Temuan:
+- Delapan naskah yang tercatat dalam SKIPPED_8 sudah menjadi pengalih 40 byte.
+- Sebanyak 25 adegan pengganti berbeda dari ekspor PC lama. Perbedaan file
+  saja tidak membuktikan seluruh konten sudah diganti dengan benar.
+- Audit sebelumnya mengonfirmasi sisa konten 18+ pada ind_0127_f3_kko.mes.
+  Pemindaian kata juga menandai fst_1218_d1_yme.mes, fst_1224_f1_snb.mes,
+  ind_0116_f1_nnk.mes, dan ind_0121_f2_yme.mes untuk pemeriksaan konteks.
+  Temuan kata saja bukan bukti adegan 18+; scan juga dapat melewatkan konten.
+- ind_0127_f1_nnk.mes memiliki label cabang rusak dalam sumber: 24 label
+  Indonesia dan 12 label Jepang tidak menunjuk awal token. Kedua versi punya
+  651 token dan 126 label. Diperlukan sumber pembanding yang valid; tool
+  menolak mengimpor perubahan file ini, bukan menebak tujuan cabangnya.
+
+JSON_AllAge_Original_20261016 adalah ekspor AdvData\MES tersebut. Nama lama
+dipertahankan agar lokasi yang pernah dirujuk tetap tersedia; kata AllAge
+dan Original dalam nama folder TIDAK membuktikan edisi atau keaslian.
+AdvData\MES\json adalah ekspor lama yang masih memuat adegan 18+.
+id_Data\JSON adalah ekspor naskah Indonesia terpasang.
+
+Ekspor/impor hanya mengubah representasi teks MES <-> JSON. Proses ini
+tidak otomatis membuang adegan 18+, memverifikasi CG/suara, mencocokkan
+edisi lain, atau menjamin kecocokan makna terjemahan.
+
+Untuk acuan All Age, gunakan naskah edisi resmi yang diperoleh secara sah
+atau bangun ulang dari sumber PC/PS2 dan mapping yang benar, lalu audit
+teks, aset, pilihan, replay, serta cabang cerita. Bahan pipeline yang
+dirujuk skrip lama belum lengkap pada folder tools ini.
+
+Status distribusi: perbaikan tools dan tampilan pilihan dapat digunakan,
+tetapi paket belum dapat dinyatakan sebagai All Age yang sudah bersih.

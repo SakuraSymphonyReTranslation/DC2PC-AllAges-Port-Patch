@@ -1,0 +1,15 @@
+# Generated files / Berkas hasil build
+**/obj/
+**/bin/
+**/build/
+**/.vs/
+**/__pycache__/
+*.pyc
+*.pdb
+*.log
+*.rar
+.DS_Store
+Thumbs.db
+# Developer-only copies embedded into the launcher
+/source_code/DC2PCPatch/LoaderDll.dll
+/source_code/DC2PCPatch/LocaleEmulator.dll

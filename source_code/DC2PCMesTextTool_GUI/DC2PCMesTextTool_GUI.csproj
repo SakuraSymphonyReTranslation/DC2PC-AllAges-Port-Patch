@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>DC2PCMesTextTool_GUI</RootNamespace>
+    <StartupObject>DC2PCMesTextTool_GUI.Program</StartupObject>
+    <AssemblyName>DC2PCMesTextTool_GUI</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DC2PCPatch\**" />
+    <Compile Remove="bin\**" />
+    <Compile Remove="obj\**" />
+    <Compile Remove="_bin_patched\**" />
+    <Compile Remove="_obj_patched\**" />
+    <Compile Remove="_patched_tool\**" />
+    <EmbeddedResource Remove="DC2PCPatch\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <EmbeddedResource Remove="obj\**" />
+    <EmbeddedResource Remove="_bin_patched\**" />
+    <EmbeddedResource Remove="_obj_patched\**" />
+    <EmbeddedResource Remove="_patched_tool\**" />
+    <None Remove="DC2PCPatch\**" />
+    <None Remove="bin\**" />
+    <None Remove="obj\**" />
+    <None Remove="_bin_patched\**" />
+    <None Remove="_obj_patched\**" />
+    <None Remove="_patched_tool\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="UiStrings.json" LogicalName="DC2PCMesTextTool_GUI.UiStrings.json" />
+    <None Update="BEGINNER_GUIDE.txt" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="TUTORIAL_ENGLISH.txt" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="TUTORIAL_INDONESIA.txt" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="PANDUAN_PEMULA.txt" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="PETA_PIPELINE.txt" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="STATUS_SUMBER.txt" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
