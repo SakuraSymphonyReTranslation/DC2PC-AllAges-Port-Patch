@@ -17,6 +17,8 @@ Get the two archives from [Releases](https://github.com/SakuraSymphonyReTranslat
 | `DC2PC_AllAges_Patch DLL + Executable.rar` | Launcher, patch DLL, INI, two Locale Emulator DLLs, bilingual installation guide, and third-party notices. The executable is **DC2PCLauncher.exe**; the base game executable is not included. |
 | `Tools_Terjemahan_or_Translate.rar` | Ready-to-run MES/JSON editor with its DLL/config files, English and Indonesian tutorial modules, and guides. Requires **.NET 8 Desktop Runtime for Windows**. |
 
+GitHub replaces spaces in asset filenames with dots. The runtime asset keeps the display label above, but downloads as `DC2PC_AllAges_Patch.DLL.+.Executable.rar`; its contents are identical to the locally named archive.
+
 Neither RAR contains the `AdvData` / `id_Data` script folders. For the bundled Indonesian port data, download this repository using **Code > Download ZIP**, or select **Source code (zip)** on the release page. You still need an installed copy of the game containing `DC2PC.EXE` and its original assets. This repository is not a complete game installation.
 
 ### Install the bundled Indonesian data
@@ -74,6 +76,8 @@ Ambil kedua arsip dari [Releases](https://github.com/SakuraSymphonyReTranslation
 | --- | --- |
 | `DC2PC_AllAges_Patch DLL + Executable.rar` | Launcher, DLL patch, INI, dua DLL Locale Emulator, panduan pemasangan dua bahasa, dan keterangan komponen pihak ketiga. Executable yang dimaksud adalah **DC2PCLauncher.exe**; executable game asli tidak disertakan. |
 | `Tools_Terjemahan_or_Translate.rar` | Editor MES/JSON siap jalan beserta DLL/config, modul tutorial Inggris dan Indonesia, serta panduan. Memerlukan **.NET 8 Desktop Runtime untuk Windows**. |
+
+GitHub mengganti spasi pada nama aset menjadi titik. Label runtime tetap seperti di atas, tetapi berkas terunduh bernama `DC2PC_AllAges_Patch.DLL.+.Executable.rar`; isinya identik dengan arsip lokal.
 
 Kedua RAR tidak memuat folder naskah `AdvData` / `id_Data`. Untuk data port Indonesia bawaan, unduh repository melalui **Code > Download ZIP**, atau pilih **Source code (zip)** pada halaman release. Anda tetap memerlukan instalasi game dengan `DC2PC.EXE` dan aset aslinya. Repository ini bukan instalasi game lengkap.
 
@@ -140,3 +144,5 @@ See / Lihat [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for component attri
 The release preparation passed a .NET build with zero warnings/errors, 582 language/project-state assertions, six installer scenarios, and extraction/hash checks for both RAR archives. Runtime and ready-to-run editor binaries retain the tested package's hashes. Archive checksums: [RELEASE_SHA256SUMS.txt](RELEASE_SHA256SUMS.txt).
 
 Persiapan release lulus build .NET tanpa warning/error, 582 pemeriksaan bahasa/status proyek, enam skenario installer, serta pemeriksaan ekstraksi/hash kedua RAR. Hash biner runtime dan editor siap jalan tetap sama dengan paket yang telah diuji. Checksum arsip: [RELEASE_SHA256SUMS.txt](RELEASE_SHA256SUMS.txt).
+
+For GitHub's normalized download filenames, use / Untuk nama berkas unduhan yang disesuaikan GitHub, gunakan [GITHUB_RELEASE_SHA256SUMS.txt](GITHUB_RELEASE_SHA256SUMS.txt).
